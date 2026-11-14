@@ -48,7 +48,7 @@ export default function OpeningGate({ entered, onEnter }) {
           className="gate-rise mb-5 text-[0.84rem] font-medium tracking-[0.06em] text-lilac"
           style={{ animationDelay: "0.08s" }}
         >
-          A birthday picnic for Ijeoma
+          A birthday picnic for
         </p>
         <h1
           className="gate-rise font-serif text-[clamp(4.8rem,15vw,9.5rem)] font-semibold leading-[0.88] tracking-[-0.03em] text-cream"
@@ -68,7 +68,7 @@ export default function OpeningGate({ entered, onEnter }) {
           className="gate-rise mt-8 text-[0.82rem] font-medium tracking-[0.12em] text-lilac-pale"
           style={{ animationDelay: "0.5s" }}
         >
-          Psst — there’s cake inside.
+          A little secret — there’s cake inside.
         </p>
 
         <div
