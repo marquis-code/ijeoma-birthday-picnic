@@ -1,11 +1,12 @@
 import { createContext, useCallback, useContext, useMemo, useRef, useState } from "react";
 
 const MusicContext = createContext(null);
-const VIDEO_ID = "p8HoEvDh70Y"; // Opening soundtrack
+const VIDEO_ID = "p8HoEvDh70Y";
+const NEXT_VIDEO_ID = "VIoPTujr11M"; // second track in the opening sequence
 
 const EMBED_SRC =
   `https://www.youtube.com/embed/${VIDEO_ID}` +
-  `?autoplay=1&loop=1&playlist=${VIDEO_ID}` +
+  `?autoplay=1&loop=1&playlist=${NEXT_VIDEO_ID}` +
   "&controls=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1";
 
 export function MusicProvider({ children }) {

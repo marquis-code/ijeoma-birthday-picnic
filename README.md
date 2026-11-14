@@ -33,7 +33,7 @@ Directions: **+234 703 562 8526** or **+234 705 718 8970**.
 - **RSVP:** short form, confirmation, native share and `.ics` calendar download.
 - **Extras:** floating music control, confetti, soft dust, scroll reveals, reduced-motion support.
 
-The main page is intentionally much shorter than the previous version: roughly **6,300px on desktop** and **8,000px on mobile**, with repeated copy removed.
+The main page is intentionally much shorter than the previous version: roughly **6,400px on desktop** and **8,300px on mobile**, with repeated copy removed.
 
 ## Money gifts
 
@@ -46,6 +46,8 @@ The wishlist section includes the account details supplied for money gifts:
 After sending, guests are invited to WhatsApp their transfer proof to **+234 703 562 8526** so the family can appreciate them extra specially. The same details appear on the downloadable PDF.
 
 ## Music note
+
+The background sequence begins when the opening gate is clicked and advances to a second track after the first. No track titles are shown on the site.
 
 The opening soundtrack is embedded from YouTube and starts with the one-tap opening gate. No audio file is bundled in the repository.
 

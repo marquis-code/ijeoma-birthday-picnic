@@ -47,85 +47,120 @@ export default function Invitation() {
           </h2>
         </Reveal>
 
-        <Reveal
-          delay={100}
-          className="mx-auto max-w-[1020px] overflow-hidden border border-orchid/35 bg-paper shadow-paper"
-        >
-          <div className="relative flex flex-wrap items-center justify-between gap-5 overflow-hidden bg-plum px-6 py-6 text-cream md:px-10">
-            <span className="pointer-events-none absolute -right-3 -top-12 select-none font-serif text-[10rem] font-semibold leading-none text-lilac-pale/[0.07] md:text-[14rem]">
-              05
-            </span>
-            <div className="relative">
-              <p className="text-[0.8rem] font-medium uppercase tracking-[0.24em] text-lilac">
-                Saturday
-              </p>
-              <p className="mt-1 font-serif text-[1.75rem] font-medium leading-none tracking-[-0.02em] md:text-[2.25rem]">
-                05 December 2026
-              </p>
-            </div>
-            <div className="relative flex flex-wrap items-center gap-x-4 gap-y-2 text-[0.88rem] font-medium">
-              <span className="rounded-full border border-lilac/30 px-4 py-2 text-lilac-pale">
-                1:30 PM
-              </span>
-              <span className="text-cream/90">Lagos, Nigeria</span>
-            </div>
-          </div>
-
-          <div className="grid gap-8 px-6 py-8 md:grid-cols-[1.15fr_0.85fr] md:px-10 md:py-10">
-            <div>
-              <p className="text-[0.78rem] font-medium uppercase tracking-[0.22em] text-orchid-dark">
-                You are warmly invited
-              </p>
-              <h3 className="mt-2 font-serif text-[clamp(3.5rem,8vw,5.8rem)] font-semibold leading-[0.9] tracking-[-0.03em] text-ink">
-                Ijeoma
-              </h3>
-              <p className="mt-5 max-w-[470px] text-[1rem] leading-[1.7] text-ink-soft">
-                Join us in the garden for a birthday picnic in her honour. There
-                will be good food, soft light and all her favourite people — we’d
-                love for you to be there.
-              </p>
-              <div className="mt-6 flex flex-wrap items-center gap-3">
-                <a
-                  href="#rsvp"
-                  className="inline-flex min-h-[3.2rem] items-center justify-center gap-2.5 rounded-full bg-ink px-6 py-3.5 text-[0.82rem] font-medium uppercase tracking-[0.16em] text-cream transition hover:bg-plum"
-                >
-                  RSVP <Icon name="arrow" className="h-4 w-4" />
-                </a>
-                <button
-                  type="button"
-                  onClick={downloadCalendar}
-                  className="inline-flex min-h-[3.2rem] items-center gap-2 rounded-full border border-ink/25 px-5 py-3.5 text-[0.8rem] font-medium uppercase tracking-[0.14em] text-ink transition hover:border-ink hover:bg-ink hover:text-cream"
-                >
-                  Add to calendar <Icon name="calendar" className="h-4 w-4" />
-                </button>
-              </div>
-            </div>
-
-            <div className="grid content-start gap-5 border-t border-ink/10 pt-6 md:border-l md:border-t-0 md:pl-8 md:pt-0">
-              <div>
-                <span className="mb-1.5 block text-[0.78rem] font-medium uppercase tracking-[0.2em] text-orchid-dark">
-                  Dress cutesy &amp; comfortable
+        <Reveal delay={100} className="mx-auto max-w-[1060px]">
+          <div className="relative bg-paper p-2 shadow-paper">
+            <div className="pointer-events-none absolute inset-2 border border-orchid/25" />
+            <div className="relative grid overflow-hidden md:grid-cols-[0.92fr_1.08fr]">
+              <aside className="relative overflow-hidden bg-plum px-6 py-8 text-cream md:px-10 md:py-12">
+                <span className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full border border-lilac/15" />
+                <span className="pointer-events-none absolute -bottom-20 -left-16 h-64 w-64 rounded-full border border-lilac/10" />
+                <span className="absolute right-5 top-5 grid h-11 w-11 place-items-center rounded-full border border-lilac/35 text-lilac">
+                  <Icon name="heart" filled className="h-4 w-4" />
                 </span>
-                <p className="text-[1rem] leading-[1.65] text-ink-soft">
-                  Soft colours, easy fabrics, happy feet.
+
+                <p className="text-[0.76rem] font-medium uppercase tracking-[0.24em] text-lilac">
+                  The details
                 </p>
-              </div>
-              <div>
-                <span className="mb-1.5 block text-[0.78rem] font-medium uppercase tracking-[0.2em] text-orchid-dark">
-                  Bring something edible
-                </span>
-                <p className="text-[1rem] leading-[1.65] text-ink-soft">
-                  Sweet, savoury or both — enough to share.
+                <p className="mt-4 text-[0.82rem] font-medium uppercase tracking-[0.2em] text-cream/70">
+                  Saturday
                 </p>
-              </div>
-              <div className="rounded-sm bg-cream px-4 py-3">
-                <p className="text-[0.78rem] font-medium uppercase tracking-[0.18em] text-orchid-dark">
-                  {countdown.days} days · {countdown.hours} hrs ·{" "}
-                  {countdown.minutes} min
+                <div className="mt-1 flex items-end gap-3">
+                  <span className="font-serif text-[clamp(3.6rem,7vw,4.8rem)] font-semibold leading-[0.8] tracking-[-0.04em] text-cream">
+                    05
+                  </span>
+                  <div className="pb-1">
+                    <p className="font-serif text-[1.35rem] font-medium leading-none text-cream">
+                      December
+                    </p>
+                    <p className="mt-1 text-[0.72rem] font-medium uppercase tracking-[0.2em] text-cream/60">
+                      2026
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-7 grid gap-5">
+                  <div>
+                    <p className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-lilac">
+                      Time
+                    </p>
+                    <p className="mt-1 font-serif text-[1.6rem] font-medium leading-none text-cream">
+                      1:30 PM
+                      <span className="ml-2 font-sans text-[0.72rem] uppercase tracking-[0.14em] text-cream/55">
+                        arrival
+                      </span>
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-lilac">
+                      Place
+                    </p>
+                    <p className="mt-1 font-serif text-[1.35rem] font-medium leading-[1.2] text-cream">
+                      Jaekel House
+                    </p>
+                    <p className="mt-1 max-w-[310px] text-[0.9rem] leading-[1.55] text-cream/78">
+                      Nigerian Railway Corporation Compound, Ebute Metta, Lagos
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-7 border-t border-lilac/20 pt-5">
+                  <p className="text-[0.78rem] font-medium uppercase tracking-[0.16em] text-lilac-pale">
+                    {countdown.days} days · {countdown.hours} hrs ·{" "}
+                    {countdown.minutes} min
+                  </p>
+                  <p className="mt-1 text-[0.82rem] text-cream/58">
+                    until the picnic
+                  </p>
+                </div>
+              </aside>
+
+              <div className="relative bg-paper px-6 py-8 md:px-10 md:py-12">
+                <p className="text-[0.76rem] font-medium uppercase tracking-[0.22em] text-orchid-dark">
+                  You are warmly invited
                 </p>
-                <p className="mt-1 text-[0.88rem] text-ink-soft">
-                  until the picnic
+                <h3 className="mt-2 font-serif text-[clamp(3.5rem,7vw,5.5rem)] font-semibold leading-[0.9] tracking-[-0.03em] text-ink">
+                  Ijeoma
+                </h3>
+                <p className="mt-5 max-w-[470px] text-[1rem] leading-[1.7] text-ink-soft">
+                  Join us in the garden for a birthday picnic in her honour. There
+                  will be good food, games and all her favourite people — we’d love
+                  for you to be there.
                 </p>
+
+                <div className="mt-6 flex flex-wrap items-center gap-3">
+                  <a
+                    href="#rsvp"
+                    className="inline-flex min-h-[3.2rem] items-center justify-center gap-2.5 rounded-full bg-ink px-6 py-3.5 text-[0.82rem] font-medium uppercase tracking-[0.16em] text-cream transition hover:bg-plum"
+                  >
+                    RSVP <Icon name="arrow" className="h-4 w-4" />
+                  </a>
+                  <button
+                    type="button"
+                    onClick={downloadCalendar}
+                    className="inline-flex min-h-[3.2rem] items-center gap-2 rounded-full border border-ink/25 px-5 py-3.5 text-[0.8rem] font-medium uppercase tracking-[0.14em] text-ink transition hover:border-ink hover:bg-ink hover:text-cream"
+                  >
+                    Add to calendar <Icon name="calendar" className="h-4 w-4" />
+                  </button>
+                </div>
+
+                <div className="mt-8 grid gap-5 border-t border-ink/10 pt-6 min-[521px]:grid-cols-2">
+                  <div>
+                    <p className="mb-1.5 text-[0.76rem] font-medium uppercase tracking-[0.18em] text-orchid-dark">
+                      Dress cutesy &amp; comfortable
+                    </p>
+                    <p className="text-[0.96rem] leading-[1.65] text-ink-soft">
+                      Soft colours, easy fabrics, happy feet.
+                    </p>
+                  </div>
+                  <div>
+                    <p className="mb-1.5 text-[0.76rem] font-medium uppercase tracking-[0.18em] text-orchid-dark">
+                      Bring something edible
+                    </p>
+                    <p className="text-[0.96rem] leading-[1.65] text-ink-soft">
+                      Sweet, savoury or both — enough to share.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
