@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Icon from "./Icon";
+import MoneyGifts from "./MoneyGifts";
 import Reveal from "./Reveal";
 import WishlistPdf from "./WishlistPdf";
 import { wishes } from "../data/wishes";
@@ -159,9 +160,11 @@ export default function Wishlist() {
         </div>
 
         <p className="mt-5 text-[0.88rem] leading-[1.6] text-cream/74">
-          Your checkmarks stay on this device. Download the PDF to share the list
-          with friends or family.
+          Your checkmarks stay on this device. Download the PDF above to share the
+          list with friends or family.
         </p>
+
+        <MoneyGifts />
       </div>
 
       <WishlistPdf ref={pdfRef} />

@@ -28,12 +28,22 @@ Directions: **+234 703 562 8526** or **+234 705 718 8970**.
 - **Hero:** Clash Display name treatment, portrait, the date, time and place.
 - **Invitation:** compact card with dress code, what to bring and a live countdown.
 - **Her story:** three portrait cards in a short gallery.
-- **Wishlist:** 15 items in a compact two-column list, tap-to-save checkmarks and a **Download wishlist PDF** button.
+- **Wishlist:** 15 items in a compact two-column list, tap-to-save checkmarks, a **Download wishlist PDF** button and a money-gift card.
 - **Venue:** full official address, two directions phone numbers and a direct Google Maps link.
 - **RSVP:** short form, confirmation, native share and `.ics` calendar download.
 - **Extras:** floating music control, confetti, soft dust, scroll reveals, reduced-motion support.
 
-The main page is intentionally much shorter than the previous version: roughly **6,000px on desktop** and **7,700px on mobile**, with repeated copy removed.
+The main page is intentionally much shorter than the previous version: roughly **6,300px on desktop** and **8,300px on mobile**, with repeated copy removed.
+
+## Money gifts
+
+The wishlist section includes the account details supplied for money gifts:
+
+- **GTBank:** 0684531680
+- **Opay:** 7035628526
+- **Account name:** Ojukwu Ijeoma Linda
+
+After sending, guests are invited to WhatsApp their transfer proof to **+234 703 562 8526** so the family can appreciate them extra specially. The same details appear on the downloadable PDF.
 
 ## Music note
 
@@ -76,6 +86,7 @@ src/
     Story.jsx              Short photo gallery
     Wishlist.jsx           Compact list + PDF export
     WishlistPdf.jsx        Hidden A4 design captured to PDF
+    MoneyGifts.jsx         Account details, copy buttons and WhatsApp proof link
     Venue.jsx              Full address and directions
     Rsvp.jsx
     Footer.jsx

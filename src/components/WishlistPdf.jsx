@@ -195,6 +195,55 @@ const WishlistPdf = forwardRef(function WishlistPdf(_, ref) {
         </span>
         <div
           style={{
+            marginTop: "18px",
+            padding: "13px 16px",
+            border: "1px solid rgba(232,214,240,0.24)",
+            backgroundColor: "rgba(253,249,254,0.035)",
+          }}
+        >
+          <p
+            style={{
+              margin: 0,
+              fontSize: "9px",
+              fontWeight: 500,
+              letterSpacing: "0.2em",
+              textTransform: "uppercase",
+              color: "#cba3de",
+            }}
+          >
+            Money gifts
+          </p>
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "10px 34px",
+              marginTop: "8px",
+              fontFamily: "'Clash Display', Arial, sans-serif",
+              fontSize: "13px",
+              fontWeight: 500,
+              color: "#f8f3fa",
+            }}
+          >
+            <span>GTBank · 0684531680</span>
+            <span>Opay · 7035628526</span>
+            <span style={{ color: "#cba3de" }}>Ojukwu Ijeoma Linda</span>
+          </div>
+          <p
+            style={{
+              margin: "7px 0 0",
+              fontSize: "9px",
+              lineHeight: 1.45,
+              color: "rgba(248,243,250,0.58)",
+            }}
+          >
+            Send your transfer proof to +234 703 562 8526 on WhatsApp and we’ll
+            appreciate you extra specially. 💜
+          </p>
+        </div>
+
+        <div
+          style={{
             position: "absolute",
             left: "58px",
             right: "58px",
