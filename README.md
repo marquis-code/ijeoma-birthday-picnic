@@ -30,12 +30,12 @@ Directions: **+234 703 562 8526** or **+234 705 718 8970**.
 - **Hero:** Clash Display name treatment, portrait, the date, time and place.
 - **Invitation:** compact card with dress code, what to bring and a live countdown.
 - **Her story:** three portrait cards in a short gallery.
-- **Wishlist:** 15 items in a compact two-column list, tap-to-save checkmarks, a **Download wishlist PDF** button and a money-gift card.
+- **Wishlist:** 15 items in a cute two-column mobile / three-column desktop card grid, tap-to-save hearts, a **Download wishlist PDF** button and a money-gift card.
 - **Venue:** full official address, two directions phone numbers and a direct Google Maps link.
 - **RSVP:** short form, confirmation, native share and `.ics` calendar download.
 - **Extras:** floating music control, confetti, soft dust, scroll reveals, reduced-motion support.
 
-The main page is intentionally much shorter than the previous version: roughly **6,400px on desktop** and **8,600px on mobile**, with repeated copy removed.
+The main page is intentionally much shorter than the previous version: roughly **7,000px on desktop** and **9,100px on mobile**, with repeated copy removed.
 
 ## Money gifts
 

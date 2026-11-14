@@ -108,11 +108,11 @@ export default function Wishlist() {
           </Reveal>
         </div>
 
-        <div className="mt-8 grid gap-x-10 border-t border-lilac-pale/25 min-[761px]:mt-10 min-[761px]:grid-cols-2">
+        <div className="mt-8 grid grid-cols-2 gap-2.5 border-t border-lilac-pale/25 pt-5 min-[761px]:gap-4 min-[1001px]:grid-cols-3">
           {wishes.map((wish, index) => {
             const isReserved = reserved.has(wish.id);
             return (
-              <Reveal key={wish.id} delay={Math.min(index * 20, 180)}>
+              <Reveal key={wish.id} delay={Math.min(index * 22, 180)} className="h-full">
                 <button
                   type="button"
                   onClick={(event) => toggle(event, wish)}
@@ -122,46 +122,77 @@ export default function Wishlist() {
                       ? "saved to your gift list. Tap to remove."
                       : "tap to save this gift idea."
                   }`}
-                  className="group flex w-full items-start gap-3 border-b border-lilac-pale/20 py-3.5 text-left transition hover:bg-paper/[0.04]"
+                  className={`group relative flex h-full min-h-[205px] w-full flex-col overflow-hidden rounded-sm border p-3.5 text-left transition duration-500 min-[761px]:min-h-[220px] min-[761px]:p-5 ${
+                    isReserved
+                      ? "border-lilac/70 bg-lilac/12"
+                      : "border-lilac-pale/[0.16] bg-paper/[0.035] hover:-translate-y-1 hover:border-lilac/55 hover:bg-paper/[0.065]"
+                  }`}
                 >
-                  <span className="w-6 shrink-0 pt-1 font-serif text-[0.9rem] font-medium text-lilac">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span
-                    className={`mt-0.5 grid h-8 w-8 shrink-0 place-items-center rounded-full border transition ${
-                      isReserved
-                        ? "border-lilac bg-lilac text-plum-deep"
-                        : "border-lilac/25 text-lilac"
-                    }`}
-                  >
-                    <Icon name={wish.icon} className="h-4 w-4" strokeWidth={1.25} />
-                  </span>
-                  <span className="min-w-0 flex-1">
-                    <span className="block font-serif text-[1.08rem] font-medium leading-[1.2] tracking-[-0.01em] text-cream">
-                      {wish.title}
+                  <span className="flex items-center justify-between gap-2">
+                    <span className="text-[0.6rem] font-medium tracking-[0.18em] text-lilac-pale/70">
+                      {String(index + 1).padStart(2, "0")}
                     </span>
-                    <span className="mt-0.5 block text-[0.88rem] leading-[1.45] text-cream/90">
-                      {wish.note}
+                    <span
+                      className={`grid h-7 w-7 place-items-center rounded-full border transition ${
+                        isReserved
+                          ? "border-lilac bg-lilac text-plum-deep"
+                          : "border-lilac/35 text-lilac group-hover:border-lilac"
+                      }`}
+                    >
+                      <Icon name="heart" className="h-3.5 w-3.5" filled={isReserved} />
                     </span>
                   </span>
+
+                  <span className="mt-3 grid h-9 w-9 place-items-center rounded-full border border-lilac/20 bg-plum-deep/30 text-lilac min-[761px]:h-10 min-[761px]:w-10">
+                    <Icon
+                      name={wish.icon}
+                      className="h-[18px] w-[18px] min-[761px]:h-5 min-[761px]:w-5"
+                      strokeWidth={1.2}
+                    />
+                  </span>
+
+                  <span className="mt-3 block font-serif text-[1.04rem] font-medium leading-[1.16] tracking-[-0.015em] text-cream min-[761px]:text-[1.28rem]">
+                    {wish.title}
+                  </span>
+                  <span className="mt-1.5 block text-[0.76rem] leading-[1.45] text-cream/72 min-[761px]:text-[0.84rem] min-[761px]:leading-[1.55]">
+                    {wish.note}
+                  </span>
+
                   <span
-                    className={`mt-1 grid h-6 w-6 shrink-0 place-items-center rounded-full border transition ${
-                      isReserved
-                        ? "border-lilac bg-lilac text-plum-deep"
-                        : "border-lilac-pale/25 text-lilac group-hover:border-lilac"
+                    className={`mt-auto flex items-center gap-1.5 pt-3 text-[0.54rem] font-medium uppercase tracking-[0.12em] min-[761px]:text-[0.58rem] ${
+                      isReserved ? "text-lilac-pale" : "text-lilac-pale/55"
                     }`}
                   >
-                    <Icon name="heart" className="h-3 w-3" filled={isReserved} />
+                    <span
+                      className={`h-1 w-1 rounded-full ${
+                        isReserved
+                          ? "bg-lilac shadow-[0_0_0_3px_rgba(203,163,222,0.16)]"
+                          : "bg-current"
+                      }`}
+                    />
+                    {isReserved ? "Saved to your list" : "Still dreaming"}
                   </span>
                 </button>
               </Reveal>
             );
           })}
+
+          <div className="flex min-h-[205px] flex-col items-center justify-center rounded-sm border border-dashed border-lilac-pale/30 p-4 text-center min-[1001px]:hidden">
+            <Icon name="heart" filled className="h-7 w-7 text-lilac" />
+            <p className="mt-3 font-serif text-[1.08rem] font-medium leading-[1.15] tracking-[-0.02em] text-cream">
+              The best gift?
+              <br />
+              <span className="text-lilac">You, there.</span>
+            </p>
+            <span className="mt-3 text-[0.5rem] font-medium uppercase tracking-[0.2em] text-lilac-pale/55">
+              with love
+            </span>
+          </div>
         </div>
 
         <p className="mt-5 text-[0.88rem] leading-[1.6] text-cream/74">
-          Your checkmarks stay on this device. Download the PDF above to share the
-          list with friends or family.
+          Tap any card to keep your favourite ideas. Your choices stay on this
+          device — no pressure, no fuss.
         </p>
 
         <MoneyGifts />
