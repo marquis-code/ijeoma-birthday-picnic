@@ -49,7 +49,7 @@ After sending, guests are invited to WhatsApp their transfer proof to **+234 703
 
 The opening soundtrack is embedded from YouTube and starts with the one-tap opening gate. No audio file is bundled in the repository.
 
-Modern browsers refuse to start unmuted audio without a user gesture. The **opening gate** is therefore the one click required to start the background soundtrack. The floating sound button controls playback. If your network blocks YouTube, the site still works.
+Modern browsers refuse to start unmuted audio without a user gesture. The **opening gate** is therefore the one click required to start the background soundtrack. If your network blocks YouTube, the site still works.
 
 ## Wishlist PDF
 
@@ -91,8 +91,7 @@ src/
     Rsvp.jsx
     Footer.jsx
     Nav.jsx
-    SoundButton.jsx
-    Effects.jsx
+      Effects.jsx
     Icon.jsx
   data/wishes.js           The 15 wish-list entries
   lib/                     Calendar, confetti, storage and asset helpers
@@ -132,4 +131,4 @@ The Vite `base` is `./`, so the same build works at a repository subpath or a cu
 
 - Calendar events start at 1:30 PM Lagos time (12:30 UTC) and use a four-hour placeholder end time. Adjust in `src/lib/calendar.js`.
 - The RSVP endpoint and WhatsApp number are blank in the repo. Nothing is sent anywhere until configured.
-- The YouTube player is hidden for a clean visual experience; the floating sound button controls playback once the player is ready.
+- The YouTube player is hidden for a clean visual experience.

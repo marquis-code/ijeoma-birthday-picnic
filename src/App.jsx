@@ -7,7 +7,6 @@ import Nav from "./components/Nav";
 import OpeningGate from "./components/OpeningGate";
 import ProgressBar from "./components/ProgressBar";
 import Rsvp from "./components/Rsvp";
-import SoundButton from "./components/SoundButton";
 import Story from "./components/Story";
 import Venue from "./components/Venue";
 import Wishlist from "./components/Wishlist";
@@ -44,7 +43,6 @@ function Page() {
         <Rsvp />
       </main>
       <Footer />
-      <SoundButton hidden={!entered} />
     </>
   );
 }
