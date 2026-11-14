@@ -34,7 +34,7 @@ export default function Invitation() {
   const countdown = useCountdown();
 
   return (
-    <section id="invitation" className="relative bg-cream py-16 min-[761px]:py-24">
+    <section id="invitation" className="relative overflow-hidden bg-cream py-16 min-[761px]:py-24">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_10%_20%,rgba(199,155,200,0.2),transparent_42%),radial-gradient(ellipse_at_90%_80%,rgba(203,163,222,0.16),transparent_45%)]" />
       <CelebrationDecor section="invitation" />
       <div className="container-page relative z-[2]">

@@ -51,7 +51,7 @@ export default function Story() {
           </Reveal>
         </div>
 
-        <div className="-mx-5 mt-8 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-4 min-[761px]:mx-0 min-[761px]:mt-10 min-[761px]:grid min-[761px]:grid-cols-3 min-[761px]:gap-5 min-[761px]:overflow-visible min-[761px]:px-0 min-[761px]:pb-0">
+        <div className="-mx-5 mt-8 flex max-w-full snap-x snap-mandatory gap-3 overflow-x-auto overscroll-x-contain px-5 pb-4 min-[761px]:mx-0 min-[761px]:mt-10 min-[761px]:grid min-[761px]:grid-cols-3 min-[761px]:gap-5 min-[761px]:overflow-visible min-[761px]:px-0 min-[761px]:pb-0">
           {photos.map((photo, index) => (
             <Reveal
               key={photo.src}

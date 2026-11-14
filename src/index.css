@@ -65,11 +65,14 @@
 
 @layer base {
   html {
+    max-width: 100%;
+    overflow-x: hidden;
     scroll-behavior: smooth;
   }
 
   body {
     margin: 0;
+    max-width: 100%;
     overflow-x: hidden;
     background: var(--color-cream);
     color: var(--color-ink);
@@ -79,6 +82,29 @@
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
+  }
+
+  @supports (overflow: clip) {
+    html,
+    body {
+      overflow-x: clip;
+    }
+  }
+
+  main,
+  section,
+  footer {
+    max-width: 100%;
+  }
+
+  main {
+    overflow-x: hidden;
+  }
+
+  @supports (overflow: clip) {
+    main {
+      overflow-x: clip;
+    }
   }
 
   body::after {
