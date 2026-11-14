@@ -53,9 +53,9 @@ Modern browsers refuse to start unmuted audio without a user gesture. The **open
 
 ## Wishlist PDF
 
-The purple **Download wishlist PDF** button creates a designed A4 PDF in the browser. It includes all 15 items, the date, venue and a closing note, and downloads as:
+The purple **Download wishlist PDF** button creates a clean A4 PDF in the browser. It includes the title **Ijeoma’s Birthday Wishlist**, all 15 items, the money-gift details and the transfer-proof note, and downloads as:
 
-`Ijeoma-Birthday-Picnic-Wishlist.pdf`
+`Ijeoma-Birthday-Wishlist.pdf`
 
 The web version’s checkmarks are a personal, device-local checklist (`localStorage`), not a shared registry. The PDF is the version to send to friends or family.
 
@@ -108,7 +108,7 @@ public/assets/images/      The supplied photographs
 - **Colours:** edit the `@theme` tokens at the top of `src/index.css`.
 - **Fonts:** Satoshi and Clash Display are self-hosted in `src/assets/fonts/`.
 - **Photos:** replace the files in `public/assets/images/` while keeping the filenames.
-- **Full address:** `src/components/Venue.jsx`, `src/lib/calendar.js` and `src/components/WishlistPdf.jsx`.
+- **Full address:** `src/components/Venue.jsx` and `src/lib/calendar.js`.
 - **RSVP delivery:** replies are saved locally by default. To deliver them automatically, add a form endpoint or WhatsApp number before the Vite entry script in `index.html`:
 
 ```html

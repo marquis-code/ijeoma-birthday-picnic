@@ -53,7 +53,7 @@ export default function Wishlist() {
       const image = canvas.toDataURL("image/jpeg", 0.95);
       const pdf = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
       pdf.addImage(image, "JPEG", 0, 0, 210, 297);
-      pdf.save("Ijeoma-Birthday-Picnic-Wishlist.pdf");
+      pdf.save("Ijeoma-Birthday-Wishlist.pdf");
     } catch (error) {
       console.error(error);
       setExportError("The PDF could not be created. Please try again.");
@@ -85,7 +85,7 @@ export default function Wishlist() {
 
           <Reveal delay={100} className="flex flex-col items-start gap-4 min-[901px]:items-end">
             <p className="max-w-[360px] text-[1rem] leading-[1.65] text-cream/88 min-[901px]:text-right">
-              Your presence is the present. But if you’d like to spoil her,
+              For the friends insisting on spoiling her — no pressure, no fuss.
               Ijeoma has left a few very good hints.
             </p>
             <div className="flex flex-wrap items-center gap-3">

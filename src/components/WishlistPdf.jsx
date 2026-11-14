@@ -35,66 +35,23 @@ const WishlistPdf = forwardRef(function WishlistPdf(_, ref) {
       <div style={{ position: "relative", height: "100%", padding: "56px 58px 44px" }}>
         <div
           style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            gap: "24px",
             borderBottom: "1px solid rgba(232,214,240,0.28)",
             paddingBottom: "18px",
           }}
         >
-          <div>
-            <p
-              style={{
-                margin: 0,
-                fontSize: "10px",
-                fontWeight: 500,
-                letterSpacing: "0.26em",
-                textTransform: "uppercase",
-                color: "#cba3de",
-              }}
-            >
-              Ijeoma’s Birthday Picnic
-            </p>
-            <h1
-              style={{
-                margin: "8px 0 0",
-                fontFamily: "'Clash Display', Arial, sans-serif",
-                fontSize: "55px",
-                fontWeight: 600,
-                lineHeight: 0.92,
-                letterSpacing: "-0.045em",
-                color: "#f8f3fa",
-              }}
-            >
-              The Wish List
-            </h1>
-          </div>
-          <div style={{ textAlign: "right" }}>
-            <p
-              style={{
-                margin: 0,
-                fontSize: "11px",
-                fontWeight: 500,
-                letterSpacing: "0.16em",
-                textTransform: "uppercase",
-                color: "#f8f3fa",
-              }}
-            >
-              05 · 12 · 2026
-            </p>
-            <p
-              style={{
-                margin: "5px 0 0",
-                fontSize: "10px",
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                color: "rgba(248,243,250,0.62)",
-              }}
-            >
-              Jaekel House · Lagos
-            </p>
-          </div>
+          <h1
+            style={{
+              margin: 0,
+              fontFamily: "'Clash Display', Arial, sans-serif",
+              fontSize: "50px",
+              fontWeight: 600,
+              lineHeight: 0.95,
+              letterSpacing: "-0.045em",
+              color: "#f8f3fa",
+            }}
+          >
+            Ijeoma’s Birthday Wishlist
+          </h1>
         </div>
 
         <p
@@ -106,8 +63,7 @@ const WishlistPdf = forwardRef(function WishlistPdf(_, ref) {
             color: "rgba(248,243,250,0.72)",
           }}
         >
-          A little list of lovely things, for the friends who insist on spoiling
-          her. No pressure, no fuss — your presence is the present.
+          For the friends insisting on spoiling her — no pressure, no fuss.
         </p>
 
         <div
@@ -179,20 +135,6 @@ const WishlistPdf = forwardRef(function WishlistPdf(_, ref) {
           ))}
         </div>
 
-        <span
-          style={{
-            position: "absolute",
-            right: "50px",
-            bottom: "158px",
-            fontFamily: "'Clash Display', Arial, sans-serif",
-            fontSize: "150px",
-            fontWeight: 600,
-            lineHeight: 1,
-            color: "rgba(203,163,222,0.045)",
-          }}
-        >
-          05
-        </span>
         <div
           style={{
             marginTop: "18px",
@@ -242,100 +184,24 @@ const WishlistPdf = forwardRef(function WishlistPdf(_, ref) {
           </p>
         </div>
 
-        <div
+        <svg
+          viewBox="0 0 64 64"
+          aria-hidden="true"
           style={{
             position: "absolute",
-            left: "58px",
-            right: "58px",
-            bottom: "158px",
-            textAlign: "center",
+            left: "50%",
+            bottom: "46px",
+            width: "76px",
+            height: "76px",
+            transform: "translateX(-50%)",
+            opacity: 0.22,
           }}
         >
-          <span
-            style={{
-              display: "block",
-              width: "42px",
-              height: "1px",
-              margin: "0 auto 16px",
-              backgroundColor: "rgba(232,214,240,0.4)",
-            }}
+          <path
+            d="M32 52S10 39.8 10 24.5C10 17.7 15.2 13 21.5 13c4.2 0 8 2.2 10.5 5.7C34.5 15.2 38.3 13 42.5 13 48.8 13 54 17.7 54 24.5C54 39.8 32 52 32 52Z"
+            fill="#cba3de"
           />
-          <p
-            style={{
-              margin: 0,
-              fontFamily: "'Clash Display', Arial, sans-serif",
-              fontSize: "23px",
-              fontWeight: 500,
-              letterSpacing: "-0.02em",
-              color: "#e8d6f0",
-            }}
-          >
-            The best gift?{" "}
-            <span style={{ color: "#cba3de" }}>You, there.</span>
-          </p>
-          <p
-            style={{
-              margin: "9px 0 0",
-              fontSize: "9px",
-              letterSpacing: "0.24em",
-              textTransform: "uppercase",
-              color: "rgba(248,243,250,0.5)",
-            }}
-          >
-            With love, from all of us
-          </p>
-        </div>
-
-        <div
-          style={{
-            position: "absolute",
-            left: "58px",
-            right: "58px",
-            bottom: "48px",
-            display: "flex",
-            alignItems: "flex-end",
-            justifyContent: "space-between",
-            gap: "20px",
-            borderTop: "1px solid rgba(232,214,240,0.28)",
-            paddingTop: "16px",
-          }}
-        >
-          <div>
-            <p
-              style={{
-                margin: 0,
-                fontFamily: "'Clash Display', Arial, sans-serif",
-                fontSize: "16px",
-                fontWeight: 500,
-                color: "#e8d6f0",
-              }}
-            >
-              See you at the picnic.
-            </p>
-            <p
-              style={{
-                margin: "4px 0 0",
-                fontSize: "9.5px",
-                letterSpacing: "0.13em",
-                textTransform: "uppercase",
-                color: "rgba(248,243,250,0.5)",
-              }}
-            >
-              Jaekel House · Nigerian Railway Corporation Compound, Ebute Metta
-            </p>
-          </div>
-          <span
-            style={{
-              fontFamily: "'Clash Display', Arial, sans-serif",
-              fontSize: "34px",
-              fontWeight: 500,
-              color: "#cba3de",
-              lineHeight: 1,
-            }}
-          >
-            I
-          </span>
-        </div>
+        </svg>
       </div>
     </div>
   );

@@ -80,13 +80,13 @@ export default function Nav() {
           className="relative z-[102] inline-flex items-center gap-3"
         >
           <span
-            className={`grid h-[2.45rem] w-[2.45rem] place-items-center rounded-full border font-serif text-[1.28rem] leading-none transition ${
+            className={`grid h-[2.45rem] w-[2.45rem] place-items-center rounded-full border transition ${
               open
                 ? "border-lilac/55 bg-transparent text-lilac-pale"
                 : "border-orchid/70 bg-plum text-lilac-pale"
             }`}
           >
-            I
+            <Icon name="heart" className="h-4 w-4" filled />
           </span>
           <span className="flex flex-col gap-0.5 leading-none">
             <strong className="font-serif text-[1.02rem] font-medium tracking-[0.01em]">
