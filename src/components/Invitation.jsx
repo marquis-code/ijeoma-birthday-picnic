@@ -121,11 +121,8 @@ export default function Invitation() {
                 <p className="text-[0.76rem] font-medium uppercase tracking-[0.22em] text-orchid-dark">
                   You are warmly invited
                 </p>
-                <h3 className="mt-2 font-serif text-[clamp(3.5rem,7vw,5.5rem)] font-semibold leading-[0.9] tracking-[-0.03em] text-ink">
-                  Ijeoma
-                </h3>
-                <p className="mt-5 max-w-[470px] text-[1rem] leading-[1.7] text-ink-soft">
-                  Join us in the garden for a birthday picnic in her honour. There
+                <p className="mt-5 max-w-[470px] text-[1.04rem] leading-[1.75] text-ink-soft">
+                  Join us at Jaekel House for a birthday picnic in her honour. There
                   will be good food, games and all her favourite people — we’d love
                   for you to be there.
                 </p>

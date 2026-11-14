@@ -54,9 +54,6 @@ export default function Story() {
               Ijeoma, our favourite Tweety: this whole day is for you. Happy
               birthday, beautiful. Go on and blush — we planned for it.
             </p>
-            <p className="mt-5 font-serif text-[1.05rem] font-medium tracking-[-0.01em] text-plum">
-              With all our love, your people.
-            </p>
           </Reveal>
         </div>
 
