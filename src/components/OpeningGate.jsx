@@ -17,12 +17,12 @@ export default function OpeningGate({ entered, onEnter }) {
     if (!entered) buttonRef.current?.focus({ preventScroll: true });
   }, [entered]);
 
-  if (gone) return null;
-
   function enter() {
     start();
     onEnter();
   }
+
+  if (gone) return null;
 
   return (
     <div
@@ -38,36 +38,62 @@ export default function OpeningGate({ entered, onEnter }) {
       <span className="pointer-events-none absolute -bottom-[25vw] -right-[15vw] h-[60vw] w-[60vw] rounded-full border border-lilac/15" />
       <span className="pointer-events-none absolute left-1/2 top-[12%] h-2 w-2 -translate-x-1/2 rotate-45 bg-lilac" />
 
+      <Icon name="heart" filled className="gate-heart pointer-events-none absolute left-[12%] top-[25%] h-8 w-8 text-lilac/15" />
+      <Icon name="heart" filled className="gate-heart pointer-events-none absolute right-[14%] top-[58%] h-5 w-5 text-lilac/20 [animation-delay:-2.4s]" />
+      <Icon name="heart" filled className="gate-heart pointer-events-none absolute bottom-[18%] left-[20%] h-4 w-4 text-lilac/15 [animation-delay:-4.2s]" />
+      <span className="pointer-events-none absolute right-[18%] top-[30%] text-[0.7rem] text-lilac/30">✦</span>
+
       <div className="relative z-10 mx-auto flex max-w-[760px] flex-col items-center text-center">
-        <p className="mb-5 text-[0.78rem] font-medium uppercase tracking-[0.28em] text-lilac">
-          A birthday picnic
+        <p
+          className="gate-rise mb-5 text-[0.84rem] font-medium tracking-[0.06em] text-lilac"
+          style={{ animationDelay: "0.08s" }}
+        >
+          A birthday picnic for Ijeoma
         </p>
-        <h1 className="font-serif text-[clamp(4.8rem,15vw,9.5rem)] font-semibold leading-[0.88] tracking-[-0.03em] text-cream">
+        <h1
+          className="gate-rise font-serif text-[clamp(4.8rem,15vw,9.5rem)] font-semibold leading-[0.88] tracking-[-0.03em] text-cream"
+          style={{ animationDelay: "0.2s" }}
+        >
           Ijeoma
         </h1>
-        <p className="mt-8 max-w-[420px] text-[1rem] leading-[1.7] text-cream/90">
-          One tap, one song, and a garden full of people who adore her.
-        </p>
-
-        <button
-          ref={buttonRef}
-          type="button"
-          onClick={enter}
-          className="group mt-9 inline-flex min-h-[3.5rem] items-center gap-3 rounded-full border border-lilac bg-lilac px-7 py-4 text-[0.84rem] font-medium uppercase tracking-[0.18em] text-plum-deep transition hover:bg-cream"
+        <p
+          className="gate-rise mt-7 max-w-[460px] text-[1.04rem] leading-[1.7] text-cream/88"
+          style={{ animationDelay: "0.36s" }}
         >
-          <span className="grid h-7 w-7 place-items-center rounded-full bg-plum-deep text-lilac">
-            <Icon name="arrow" className="h-3.5 w-3.5" />
-          </span>
-          Tap to open with music
-        </button>
-
-        <p className="mt-5 flex flex-wrap items-center justify-center gap-2 text-[0.82rem] text-cream/78">
-          <span className="h-px w-6 bg-lilac/50" />
-          Opening song: <span className="text-lilac-pale">Toast</span> by Koffee
-          <span className="h-px w-6 bg-lilac/50" />
+          A garden full of love, a table full of treats, and all her favourite
+          people.
         </p>
-        <p className="mt-2 text-[0.78rem] text-cream/72">
-          Best experienced with sound. One tap starts the song.
+
+        <p
+          className="gate-rise mt-8 text-[0.82rem] font-medium tracking-[0.12em] text-lilac-pale"
+          style={{ animationDelay: "0.5s" }}
+        >
+          Psst — there’s cake inside.
+        </p>
+
+        <div
+          className="gate-rise relative mt-4"
+          style={{ animationDelay: "0.6s" }}
+        >
+          <span className="pointer-events-none absolute -inset-2 rounded-full border border-lilac/30 animate-[gate-pulse_3s_ease-in-out_infinite]" />
+          <button
+            ref={buttonRef}
+            type="button"
+            onClick={enter}
+            className="group relative inline-flex min-h-[3.6rem] items-center gap-3 rounded-full border border-lilac bg-lilac px-7 py-4 text-[0.82rem] font-medium uppercase tracking-[0.16em] text-plum-deep transition duration-500 hover:scale-[1.025] hover:bg-cream"
+          >
+            <span className="grid h-8 w-8 place-items-center rounded-full bg-plum-deep text-lilac">
+              <Icon name="heart" filled className="gate-beat h-4 w-4" />
+            </span>
+            Open the garden gate
+          </button>
+        </div>
+
+        <p
+          className="gate-rise mt-6 text-[0.76rem] tracking-[0.06em] text-cream/58"
+          style={{ animationDelay: "0.74s" }}
+        >
+          Come in, stay awhile.
         </p>
       </div>
     </div>

@@ -24,7 +24,7 @@ Directions: **+234 703 562 8526** or **+234 705 718 8970**.
 
 ## The experience
 
-- **Opening gate:** the site opens on a full-screen “Ijeoma” screen. One tap starts **Toast by Koffee** and reveals the celebration. Browsers block unmuted autoplay, so this gate is the reliable way to start the song as the site opens.
+- **Opening gate:** the site opens on a full-screen “Ijeoma” screen. One tap reveals the celebration and starts its background soundtrack. Browsers block unmuted autoplay, so this gate is the reliable way to begin the audio as the site opens.
 - **Hero:** Clash Display name treatment, portrait, the date, time and place.
 - **Invitation:** compact card with dress code, what to bring and a live countdown.
 - **Her story:** three portrait cards in a short gallery.
@@ -47,9 +47,9 @@ After sending, guests are invited to WhatsApp their transfer proof to **+234 703
 
 ## Music note
 
-The opening song is the official **Koffee — Toast** YouTube embed (`p8HoEvDh70Y`), loaded as a direct autoplay iframe after the opening tap. No copyrighted audio file is bundled in the repository.
+The opening soundtrack is embedded from YouTube and starts with the one-tap opening gate. No audio file is bundled in the repository.
 
-Modern browsers refuse to start unmuted audio without a user gesture. The **opening gate** is therefore the one click required to start the song. The floating sound button controls playback. If your network blocks YouTube, the site still works; the official video can also be opened directly at <https://www.youtube.com/watch?v=p8HoEvDh70Y>.
+Modern browsers refuse to start unmuted audio without a user gesture. The **opening gate** is therefore the one click required to start the background soundtrack. The floating sound button controls playback. If your network blocks YouTube, the site still works.
 
 ## Wishlist PDF
 
@@ -78,7 +78,7 @@ npm run preview
 ```text
 src/
   App.jsx                  Page composition
-  context/MusicContext.jsx Toast / YouTube player context
+  context/MusicContext.jsx Opening soundtrack / YouTube player context
   components/
     OpeningGate.jsx        One-tap music entry
     Hero.jsx

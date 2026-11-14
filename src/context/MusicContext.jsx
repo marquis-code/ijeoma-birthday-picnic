@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useMemo, useRef, useState } from "react";
 
 const MusicContext = createContext(null);
-const VIDEO_ID = "p8HoEvDh70Y"; // Original Koffee — Toast (Official Video)
+const VIDEO_ID = "p8HoEvDh70Y"; // Opening soundtrack
 
 const EMBED_SRC =
   `https://www.youtube.com/embed/${VIDEO_ID}` +
@@ -58,7 +58,7 @@ export function MusicProvider({ children }) {
         >
           <iframe
             ref={iframeRef}
-            title="Toast by Koffee"
+            title="Celebration"
             src={EMBED_SRC}
             width="240"
             height="135"
