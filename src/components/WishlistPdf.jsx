@@ -36,7 +36,7 @@ const WishlistPdf = forwardRef(function WishlistPdf(_, ref) {
         <div
           style={{
             borderBottom: "1px solid rgba(232,214,240,0.28)",
-            paddingBottom: "18px",
+            paddingBottom: "22px",
           }}
         >
           <h1
@@ -56,10 +56,10 @@ const WishlistPdf = forwardRef(function WishlistPdf(_, ref) {
 
         <p
           style={{
-            margin: "22px 0 0",
-            maxWidth: "560px",
-            fontSize: "13px",
-            lineHeight: 1.6,
+            margin: "26px 0 0",
+            maxWidth: "620px",
+            fontSize: "15.5px",
+            lineHeight: 1.55,
             color: "rgba(248,243,250,0.72)",
           }}
         >
@@ -70,8 +70,8 @@ const WishlistPdf = forwardRef(function WishlistPdf(_, ref) {
           style={{
             display: "flex",
             alignItems: "flex-start",
-            gap: "34px",
-            marginTop: "22px",
+            gap: "44px",
+            marginTop: "26px",
             borderTop: "1px solid rgba(232,214,240,0.22)",
           }}
         >
@@ -85,17 +85,17 @@ const WishlistPdf = forwardRef(function WishlistPdf(_, ref) {
                     style={{
                       display: "flex",
                       alignItems: "flex-start",
-                      gap: "10px",
-                      padding: "13px 0",
+                      gap: "12px",
+                      padding: "16px 0",
                       borderBottom: "1px solid rgba(232,214,240,0.16)",
                     }}
                   >
                     <span
                       style={{
-                        width: "26px",
+                        width: "30px",
                         flex: "none",
                         fontFamily: "'Clash Display', Arial, sans-serif",
-                        fontSize: "13px",
+                        fontSize: "16px",
                         fontWeight: 500,
                         color: "#cba3de",
                         paddingTop: "2px",
@@ -108,10 +108,10 @@ const WishlistPdf = forwardRef(function WishlistPdf(_, ref) {
                         style={{
                           margin: 0,
                           fontFamily: "'Clash Display', Arial, sans-serif",
-                          fontSize: "17px",
+                          fontSize: "23px",
                           fontWeight: 500,
-                          lineHeight: 1.15,
-                          letterSpacing: "-0.01em",
+                          lineHeight: 1.12,
+                          letterSpacing: "-0.015em",
                           color: "#f8f3fa",
                         }}
                       >
@@ -119,9 +119,9 @@ const WishlistPdf = forwardRef(function WishlistPdf(_, ref) {
                       </p>
                       <p
                         style={{
-                          margin: "4px 0 0",
-                          fontSize: "11.5px",
-                          lineHeight: 1.4,
+                          margin: "5px 0 0",
+                          fontSize: "14.5px",
+                          lineHeight: 1.45,
                           color: "rgba(248,243,250,0.6)",
                         }}
                       >
@@ -137,8 +137,8 @@ const WishlistPdf = forwardRef(function WishlistPdf(_, ref) {
 
         <div
           style={{
-            marginTop: "18px",
-            padding: "13px 16px",
+            marginTop: "16px",
+            padding: "13px 18px",
             border: "1px solid rgba(232,214,240,0.24)",
             backgroundColor: "rgba(253,249,254,0.035)",
           }}
@@ -146,7 +146,7 @@ const WishlistPdf = forwardRef(function WishlistPdf(_, ref) {
           <p
             style={{
               margin: 0,
-              fontSize: "9px",
+              fontSize: "10.5px",
               fontWeight: 500,
               letterSpacing: "0.2em",
               textTransform: "uppercase",
@@ -173,8 +173,8 @@ const WishlistPdf = forwardRef(function WishlistPdf(_, ref) {
           </div>
           <p
             style={{
-              margin: "7px 0 0",
-              fontSize: "9px",
+              margin: "9px 0 0",
+              fontSize: "10.5px",
               lineHeight: 1.45,
               color: "rgba(248,243,250,0.58)",
             }}
