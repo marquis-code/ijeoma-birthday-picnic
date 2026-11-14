@@ -1,0 +1,17 @@
+export const wishes = [
+  { id: "hp-laptop", icon: "laptop", title: "HP Laptop", note: "For big ideas and even bigger dreams." },
+  { id: "iphone-15-pro", icon: "iphone", title: "iPhone 15 Pro", note: "Or any good phone — a bright new chapter." },
+  { id: "tabletop-oven", icon: "oven", title: "Table-top oven", note: "For all the sweetness she’s yet to bake." },
+  { id: "black-handbag", icon: "bag", title: "Black handbag", note: "Sleek, classic and ready for every plan." },
+  { id: "dress-size-6", icon: "dress", title: "A beautiful dress", note: "Size 6 — for someone who wears joy beautifully." },
+  { id: "human-hair", icon: "hair", title: "Human hair", note: "Pixie curls or 16 inches of bone straight." },
+  { id: "jeans-size-27", icon: "jeans", title: "Jean trouser", note: "Size 27 — the perfect fit for every plan." },
+  { id: "money", icon: "money", title: "Moneyyyyyy", note: "Her love language. Universally understood." },
+  { id: "electric-whisk", icon: "whisk", title: "Electric whisk", note: "For cakes, dreams and a little arm relief." },
+  { id: "perfumes", icon: "perfume", title: "Perfumes", note: "A signature scent for a signature woman." },
+  { id: "sunscreen", icon: "sunscreen", title: "A very good sunscreen", note: "Protection with a glow. SPF, but make it luxe." },
+  { id: "skincare", icon: "skincare", title: "Skincare", note: "A little ritual for the face that lights up rooms." },
+  { id: "makeup-kit", icon: "makeup", title: "Makeup kit", note: "For a woman who is already a work of art." },
+  { id: "jewellery", icon: "jewellery", title: "Nice jewellery", note: "A little sparkle, just because." },
+  { id: "thoughtful-gift", icon: "gift", title: "Any thoughtful gift", note: "Always appreciated, never expected." },
+];
