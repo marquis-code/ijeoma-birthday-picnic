@@ -39,20 +39,14 @@ export default function Story() {
               <span className="text-plum">the glow.</span>
             </h2>
           </Reveal>
-          <Reveal as="div" delay={100} className="max-w-[580px] pb-1">
-            <p className="text-[1rem] leading-[1.7] text-ink-soft">
-              Once upon a garden in Lagos, a girl called Ijeoma walked in and the
-              whole afternoon got warmer. She has a laugh that turns strangers into
-              friends, a heart that notices everyone’s favourite little things, and
-              the kind of presence that makes people feel utterly seen. She is the
-              one who says “come as you are” and means it — who dances first, gives the
-              best hugs, and makes even a quiet Tuesday feel like a reason to dress up.
+          <Reveal as="div" delay={100} className="max-w-[560px] pb-1">
+            <p className="text-[1.04rem] leading-[1.75] text-ink-soft">
+              Ijeoma always shows up — with the best hugs, the loudest laugh, and a
+              heart that remembers everyone’s little things. She makes ordinary days
+              feel special and every room feel a little more like home.
             </p>
-            <p className="mt-4 text-[1rem] leading-[1.7] text-ink-soft">
-              So this picnic is not just a birthday. It’s our little love letter to
-              the girl who makes life feel softer, brighter and a lot more fun.
-              Ijeoma, our favourite Tweety: this whole day is for you. Happy
-              birthday, beautiful. Go on and blush — we planned for it.
+            <p className="mt-4 font-serif text-[1.05rem] font-medium tracking-[-0.01em] text-plum">
+              Our favourite person to celebrate.
             </p>
           </Reveal>
         </div>
