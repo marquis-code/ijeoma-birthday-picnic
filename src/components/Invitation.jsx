@@ -130,7 +130,14 @@ export default function Invitation() {
                 <div className="mt-6 flex flex-wrap items-center gap-3">
                   <a
                     href="#rsvp"
-                    className="inline-flex min-h-[3.2rem] items-center justify-center gap-2.5 rounded-full bg-ink px-6 py-3.5 text-[0.82rem] font-medium uppercase tracking-[0.16em] text-cream transition hover:bg-plum"
+                    aria-label="RSVP to Ijeoma’s birthday picnic"
+                    style={{
+                      backgroundColor: "#28182e",
+                      color: "#f8f3fa",
+                      border: "1px solid #28182e",
+                      isolation: "isolate",
+                    }}
+                    className="relative z-20 inline-flex min-h-[3.2rem] items-center justify-center gap-2.5 rounded-full px-6 py-3.5 text-[0.82rem] font-medium uppercase tracking-[0.16em] shadow-[0_10px_24px_-14px_rgba(40,24,46,0.65)] transition hover:brightness-110"
                   >
                     RSVP <Icon name="arrow" className="h-4 w-4" />
                   </a>
