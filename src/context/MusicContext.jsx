@@ -62,7 +62,30 @@ export function MusicProvider({ children }) {
     return () => window.clearTimeout(nudge);
   }, [src, started]);
 
-  const value = useMemo(() => ({ ready: true, failed: false, start }), [start]);
+  const resume = useCallback(() => {
+    if (!started) {
+      start();
+      return;
+    }
+    try {
+      const playerWindow = iframeRef.current?.contentWindow;
+      playerWindow?.postMessage(
+        JSON.stringify({ event: "command", func: "setVolume", args: [100] }),
+        "*"
+      );
+      playerWindow?.postMessage(
+        JSON.stringify({ event: "command", func: "playVideo", args: [] }),
+        "*"
+      );
+    } catch {
+      // No-op: the icon is a helpful nudge, never a stop control.
+    }
+  }, [started, start]);
+
+  const value = useMemo(
+    () => ({ ready: true, failed: false, start, resume }),
+    [start, resume]
+  );
 
   return (
     <MusicContext.Provider value={value}>

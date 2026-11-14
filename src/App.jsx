@@ -4,6 +4,7 @@ import { AmbientCelebration } from "./components/Celebration";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import Invitation from "./components/Invitation";
+import MusicHint from "./components/MusicHint";
 import Nav from "./components/Nav";
 import OpeningGate from "./components/OpeningGate";
 import ProgressBar from "./components/ProgressBar";
@@ -36,6 +37,7 @@ function Page() {
       <Effects />
       <AmbientCelebration />
       <Nav />
+      <MusicHint visible={entered} />
       <main id="main">
         <Hero ready={entered} />
         <Invitation />
