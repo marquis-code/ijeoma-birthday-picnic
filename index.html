@@ -3,6 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="build-version" content="2026-11-14-2222" />
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <script>
+      (function () {
+        var BUILD = "2026-11-14-2222";
+        var KEY = "ijeoma-birthday-build";
+        try {
+          var url = new URL(window.location.href);
+          var seen = window.localStorage.getItem(KEY);
+          if (url.searchParams.get("v") !== BUILD) {
+            if (seen !== BUILD) window.localStorage.setItem(KEY, BUILD);
+            url.searchParams.set("v", BUILD);
+            window.location.replace(url.toString());
+            return;
+          }
+          window.localStorage.setItem(KEY, BUILD);
+        } catch (error) {
+          // Storage can be unavailable in private browsing; the app still runs.
+        }
+        try {
+          if ("serviceWorker" in navigator) {
+            navigator.serviceWorker.getRegistrations().then(function (registrations) {
+              registrations.forEach(function (registration) {
+                registration.unregister();
+              });
+            }).catch(function () {});
+          }
+          if ("caches" in window) {
+            caches.keys().then(function (keys) {
+              keys.forEach(function (key) { caches.delete(key); });
+            }).catch(function () {});
+          }
+        } catch (error) {
+          // Cache cleanup is best effort.
+        }
+      })();
+    </script>
     <title>Ijeoma’s Birthday Picnic · A Violet Affair</title>
     <meta
       name="description"
