@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Icon from "./Icon";
 import MoneyGifts from "./MoneyGifts";
 import Reveal from "./Reveal";
+import { CelebrationDecor } from "./Celebration";
 import WishlistPdf from "./WishlistPdf";
 import { wishes } from "../data/wishes";
 import { celebrate } from "../lib/celebrate";
@@ -70,6 +71,7 @@ export default function Wishlist() {
         wish
       </span>
 
+      <CelebrationDecor section="wishlist" />
       <div className="container-page relative z-[2]">
         <div className="flex flex-col justify-between gap-6 min-[901px]:flex-row min-[901px]:items-end">
           <Reveal>

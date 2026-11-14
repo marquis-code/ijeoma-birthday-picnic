@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import Icon from "./Icon";
+import { CelebrationDecor, Bow } from "./Celebration";
 import { image } from "../lib/assets";
 
 function FadeUp({ as: Tag = "div", ready, delay = 0, className = "", children }) {
@@ -118,6 +119,7 @@ export default function Hero({ ready }) {
       <div className="hero-sun pointer-events-none absolute right-[-8%] top-[38%] z-0 aspect-square w-[clamp(19rem,36vw,34rem)] rounded-full opacity-70 min-[901px]:right-[3%] min-[901px]:top-[11%]" />
       <div className="pointer-events-none absolute right-[-8%] top-[8%] z-0 aspect-[4/5] w-[min(720px,58vw)] rotate-[-12deg] rounded-full border border-orchid/25" />
       <Botanical />
+      <CelebrationDecor section="hero" />
       <div className="pointer-events-none absolute inset-[1.1rem] z-[6] hidden border border-orchid/25 min-[761px]:block" />
 
       <div className="container-page relative z-[2] grid grid-cols-1 items-center gap-10 min-[901px]:grid-cols-[1.08fr_0.92fr] min-[901px]:gap-[clamp(2rem,5vw,5rem)]">
@@ -221,6 +223,7 @@ export default function Hero({ ready }) {
             ref={portraitRef}
             className="relative z-[2] rounded-t-full rounded-b-[3px] bg-paper p-[9px] shadow-portrait transition-transform duration-700 [transition-timing-function:cubic-bezier(.22,1,.36,1)]"
           >
+            <Bow className="decor-sway pointer-events-none absolute -left-4 -top-3 z-[4] h-11 w-11 -rotate-12 text-blush/80" style={{ animationDelay: "-1.5s" }} />
             <span className="pointer-events-none absolute -inset-[13px] rounded-t-full rounded-b-[3px] border border-orchid/55" />
             <div className="overflow-hidden rounded-t-full rounded-b-[1px] bg-cream-deep">
               <img

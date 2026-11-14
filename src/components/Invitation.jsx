@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Icon from "./Icon";
 import Reveal from "./Reveal";
+import { CelebrationDecor, Bow } from "./Celebration";
 import { downloadCalendar } from "../lib/calendar";
 
 const TARGET = new Date("2026-12-05T13:30:00+01:00").getTime();
@@ -35,7 +36,8 @@ export default function Invitation() {
   return (
     <section id="invitation" className="relative bg-cream py-16 min-[761px]:py-24">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_10%_20%,rgba(199,155,200,0.2),transparent_42%),radial-gradient(ellipse_at_90%_80%,rgba(203,163,222,0.16),transparent_45%)]" />
-      <div className="container-page relative">
+      <CelebrationDecor section="invitation" />
+      <div className="container-page relative z-[2]">
         <Reveal className="mx-auto mb-10 max-w-[850px] text-center">
           <p className="mb-4 text-[0.8rem] font-medium uppercase tracking-[0.24em] text-orchid-dark">
             A picnic invitation
@@ -49,6 +51,7 @@ export default function Invitation() {
 
         <Reveal delay={100} className="mx-auto max-w-[1060px]">
           <div className="relative bg-paper p-2 shadow-paper">
+            <Bow className="decor-sway pointer-events-none absolute -right-3 -top-4 z-[3] h-12 w-12 rotate-12 text-blush/75" style={{ animationDelay: "-2s" }} />
             <div className="pointer-events-none absolute inset-2 border border-orchid/25" />
             <div className="relative grid overflow-hidden md:grid-cols-[0.92fr_1.08fr]">
               <aside className="relative overflow-hidden bg-plum px-6 py-8 text-cream md:px-10 md:py-12">

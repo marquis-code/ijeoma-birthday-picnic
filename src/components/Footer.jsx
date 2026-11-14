@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import Icon from "./Icon";
 import { celebrate } from "../lib/celebrate";
+import { CelebrationDecor } from "./Celebration";
 
 export default function Footer() {
   const [line, setLine] = useState("Here’s to a year as radiant as you are.");
@@ -19,7 +20,8 @@ export default function Footer() {
   return (
     <footer className="footer-surface relative overflow-hidden px-6 pb-7 pt-20 text-center text-cream min-[761px]:pt-32">
       <span className="pointer-events-none absolute left-1/2 top-[-16rem] h-[40rem] w-[40rem] -translate-x-1/2 rounded-full border border-lilac-pale/[0.08]" />
-      <div className="relative">
+      <CelebrationDecor section="footer" />
+      <div className="relative z-[2]">
         <div className="mb-9 flex items-center justify-center gap-4">
           <span className="h-px w-16 bg-lilac-pale/25" />
           <i className="text-[0.74rem] not-italic text-lilac">✦</i>

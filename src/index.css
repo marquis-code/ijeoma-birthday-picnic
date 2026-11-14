@@ -52,6 +52,8 @@
   --color-lilac: #cba3de;
   --color-lilac-pale: #e8d6f0;
   --color-mauve: #c79bc8;
+  --color-blush: #f3c6d7;
+  --color-butter: #f3dfb0;
   --font-sans: "Satoshi", "Helvetica Neue", Arial, sans-serif;
   --font-serif: "Clash Display", "Helvetica Neue", Arial, sans-serif;
   --font-script: "Clash Display", "Helvetica Neue", Arial, sans-serif;
@@ -542,4 +544,50 @@
     opacity: 0.12;
     transform: scale(1.04);
   }
+}
+
+
+@layer components {
+  .decor-sway {
+    animation: decor-sway 8s ease-in-out infinite;
+    transform-origin: 50% 70%;
+    will-change: transform;
+  }
+
+  .decor-bob {
+    animation: decor-bob 6s ease-in-out infinite;
+    will-change: transform;
+  }
+
+  .decor-twinkle {
+    animation: decor-twinkle 3.4s ease-in-out infinite;
+    will-change: transform, opacity;
+  }
+
+  .petal-fall {
+    animation: petal-fall 18s linear infinite;
+    will-change: transform, opacity;
+  }
+}
+
+@keyframes decor-sway {
+  0%, 100% { transform: rotate(-5deg) translateY(0); }
+  50% { transform: rotate(5deg) translateY(-8px); }
+}
+
+@keyframes decor-bob {
+  0%, 100% { transform: translateY(0) rotate(-2deg); }
+  50% { transform: translateY(-11px) rotate(2deg); }
+}
+
+@keyframes decor-twinkle {
+  0%, 100% { opacity: 0.18; transform: scale(0.82) rotate(0deg); }
+  50% { opacity: 0.85; transform: scale(1.16) rotate(18deg); }
+}
+
+@keyframes petal-fall {
+  0% { transform: translate3d(0, -8vh, 0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.55; }
+  85% { opacity: 0.35; }
+  100% { transform: translate3d(24px, 108vh, 0) rotate(520deg); opacity: 0; }
 }

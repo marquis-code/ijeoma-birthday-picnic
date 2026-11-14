@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import Icon from "./Icon";
 import { useMusic } from "../context/MusicContext";
+import { celebrate } from "../lib/celebrate";
+import { CelebrationDecor } from "./Celebration";
 
 export default function OpeningGate({ entered, onEnter }) {
   const { start } = useMusic();
@@ -17,8 +19,9 @@ export default function OpeningGate({ entered, onEnter }) {
     if (!entered) buttonRef.current?.focus({ preventScroll: true });
   }, [entered]);
 
-  function enter() {
+  function enter(event) {
     start();
+    celebrate(event.currentTarget, 72);
     onEnter();
   }
 
@@ -38,6 +41,7 @@ export default function OpeningGate({ entered, onEnter }) {
       <span className="pointer-events-none absolute -bottom-[25vw] -right-[15vw] h-[60vw] w-[60vw] rounded-full border border-lilac/15" />
       <span className="pointer-events-none absolute left-1/2 top-[12%] h-2 w-2 -translate-x-1/2 rotate-45 bg-lilac" />
 
+      <CelebrationDecor section="gate" />
       <Icon name="heart" filled className="gate-heart pointer-events-none absolute left-[12%] top-[25%] h-8 w-8 text-lilac/15" />
       <Icon name="heart" filled className="gate-heart pointer-events-none absolute right-[14%] top-[58%] h-5 w-5 text-lilac/20 [animation-delay:-2.4s]" />
       <Icon name="heart" filled className="gate-heart pointer-events-none absolute bottom-[18%] left-[20%] h-4 w-4 text-lilac/15 [animation-delay:-4.2s]" />

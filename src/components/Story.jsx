@@ -1,4 +1,5 @@
 import Reveal from "./Reveal";
+import { CelebrationDecor, Bow } from "./Celebration";
 import { image } from "../lib/assets";
 
 const photos = [
@@ -25,7 +26,8 @@ export default function Story() {
       <span className="pointer-events-none absolute -right-10 top-8 select-none font-serif text-[clamp(8rem,18vw,16rem)] font-semibold leading-none text-plum/[0.04]">
         05
       </span>
-      <div className="container-page relative">
+      <CelebrationDecor section="story" />
+      <div className="container-page relative z-[2]">
         <div className="grid items-end gap-6 min-[901px]:grid-cols-[0.95fr_1.05fr] min-[901px]:gap-16">
           <Reveal>
             <p className="mb-4 text-[0.8rem] font-medium uppercase tracking-[0.24em] text-orchid-dark">
@@ -66,6 +68,9 @@ export default function Story() {
               as="figure"
               className="group w-[72%] min-w-[72%] snap-center overflow-hidden border border-orchid/40 bg-paper p-2 min-[761px]:w-auto min-[761px]:min-w-0"
             >
+              {(index === 0 || index === 2) && (
+                <Bow className="decor-sway pointer-events-none absolute right-2 top-2 z-[3] h-8 w-8 rotate-12 text-blush/85" style={{ animationDelay: "-2.2s" }} />
+              )}
               <img
                 src={image(photo.src)}
                 alt={photo.alt}

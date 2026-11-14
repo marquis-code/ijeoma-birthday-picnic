@@ -26,14 +26,14 @@ Directions: **+234 703 562 8526** or **+234 705 718 8970**.
 
 ## The experience
 
-- **Opening gate:** the site opens on a full-screen “Ijeoma” screen. One tap reveals the celebration and starts its background soundtrack. Browsers block unmuted autoplay, so this gate is the reliable way to begin the audio as the site opens.
-- **Hero:** Clash Display name treatment, portrait, the date, time and place.
-- **Invitation:** compact card with dress code, what to bring and a live countdown.
+- **Opening gate:** the site opens on a full-screen “Ijeoma” screen. One tap releases a burst of confetti, reveals the celebration and starts its background soundtrack. Browsers block unmuted autoplay, so this gate is the reliable way to begin the audio as the site opens.
+- **Hero:** Clash Display name treatment and portrait, with animated bows and floral accents.
+- **Invitation:** two-panel card with the full address, time, dress code, what to bring and a live countdown.
 - **Her story:** three portrait cards in a short gallery.
 - **Wishlist:** 15 items in a cute two-column mobile / three-column desktop card grid, tap-to-save hearts, a **Download wishlist PDF** button and a money-gift card.
 - **Venue:** full official address, two directions phone numbers and a direct Google Maps link.
 - **RSVP:** short form, confirmation, native share and `.ics` calendar download.
-- **Extras:** floating music control, confetti, soft dust, scroll reveals, reduced-motion support.
+- **Extras:** animated flower sprays, cakes, ribbons and floating petals across the sections, opening confetti, confetti on saved gifts, soft dust, scroll reveals and reduced-motion support.
 
 The main page is intentionally much shorter than the previous version: roughly **7,000px on desktop** and **9,100px on mobile**, with repeated copy removed.
 

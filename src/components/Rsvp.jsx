@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Icon from "./Icon";
 import Reveal from "./Reveal";
+import { CelebrationDecor } from "./Celebration";
 import { downloadCalendar } from "../lib/calendar";
 import { celebrateAt } from "../lib/celebrate";
 import { readJSON, writeJSON } from "../lib/storage";
@@ -168,7 +169,8 @@ export default function Rsvp() {
         say yes
       </span>
 
-      <div className="container-page relative grid items-center gap-14 min-[1024px]:grid-cols-[0.9fr_1.1fr] min-[1024px]:gap-24">
+      <CelebrationDecor section="rsvp" />
+      <div className="container-page relative z-[2] grid items-center gap-14 min-[1024px]:grid-cols-[0.9fr_1.1fr] min-[1024px]:gap-24">
         <div className="max-w-[680px]">
           <Reveal>
             <p className="mb-5 flex items-center gap-3 text-[0.76rem] uppercase tracking-[0.24em] text-ink-soft">

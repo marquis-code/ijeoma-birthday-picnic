@@ -1,5 +1,6 @@
 import Icon from "./Icon";
 import Reveal from "./Reveal";
+import { CelebrationDecor } from "./Celebration";
 
 const MAP_URL =
   "https://www.google.com/maps/search/?api=1&query=6.48898%2C3.37827";
@@ -12,6 +13,7 @@ export default function Venue() {
         05
       </span>
 
+      <CelebrationDecor section="venue" />
       <div className="container-page relative z-[2] grid items-center gap-8 min-[901px]:grid-cols-[1.15fr_0.85fr] min-[901px]:gap-20">
         <div>
           <Reveal>
