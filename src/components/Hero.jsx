@@ -38,13 +38,13 @@ function Seal() {
             textLength="482"
             lengthAdjust="spacing"
           >
-            IJEOMA · TWEETY · 05 DECEMBER 2026 · LAGOS · VIOLET HOUR ·
+            05 · 12 · 2026 · LAGOS · NIGERIA ·
           </textPath>
         </text>
       </svg>
       <span className="absolute inset-0 flex flex-col items-center justify-center gap-0.5 text-plum">
         <Icon name="bird" className="h-6 w-6" />
-        <small className="text-[0.46rem] tracking-[0.18em] text-orchid-dark">
+        <small className="text-[0.62rem] tracking-[0.18em] text-orchid-dark">
           05.12
         </small>
       </span>
@@ -126,7 +126,7 @@ export default function Hero({ ready }) {
             as="p"
             ready={ready}
             delay={50}
-            className="mb-[clamp(1.5rem,3vh,2.4rem)] flex flex-wrap items-center gap-3 text-[0.58rem] uppercase tracking-[0.24em] text-ink-soft"
+            className="mb-[clamp(1.5rem,3vh,2.4rem)] flex flex-wrap items-center gap-3 text-[0.72rem] uppercase tracking-[0.24em] text-ink-soft"
           >
             <span className="block h-px w-[2.2rem] bg-orchid" />
             <span className="whitespace-nowrap text-ink">Ijeoma’s Birthday Picnic</span>
@@ -136,7 +136,7 @@ export default function Hero({ ready }) {
           <div className="relative">
             <h1
               aria-label="Ijeoma"
-              className="hero-name-size -ml-[0.075em] flex items-end font-serif font-medium leading-[0.76] tracking-[-0.065em] text-ink"
+              className="hero-name-size -ml-[0.075em] flex items-end font-serif font-medium leading-[0.76] tracking-[-0.025em] text-ink"
             >
               {letters.map((letter, index) => (
                 <span
@@ -170,7 +170,7 @@ export default function Hero({ ready }) {
               delay={480}
               className="mt-[0.35rem] ml-[2.3rem] flex items-baseline gap-3 font-script text-[clamp(2.3rem,9vw,3.4rem)] leading-none text-plum min-[381px]:gap-4 min-[761px]:text-[clamp(2.5rem,4.6vw,4.5rem)] min-[901px]:ml-[50%]"
             >
-              <span className="font-sans text-[0.48rem] not-italic uppercase tracking-[0.22em] text-orchid-dark min-[761px]:text-[0.55rem]">
+              <span className="font-sans text-[0.65rem] not-italic uppercase tracking-[0.22em] text-orchid-dark min-[761px]:text-[0.7rem]">
                 a.k.a.
               </span>
               <em className="not-italic">Tweety</em>
@@ -195,14 +195,14 @@ export default function Hero({ ready }) {
           >
             <a
               href="#invitation"
-              className="inline-flex min-h-[3.2rem] items-center justify-center gap-3 rounded-full border border-ink bg-ink px-6 py-[0.95rem] text-[0.66rem] uppercase tracking-[0.19em] text-cream transition hover:border-plum hover:bg-plum max-[520px]:w-full"
+              className="inline-flex min-h-[3.2rem] items-center justify-center gap-3 rounded-full border border-ink bg-ink px-6 py-[0.95rem] text-[0.78rem] uppercase tracking-[0.19em] text-cream transition hover:border-plum hover:bg-plum max-[520px]:w-full"
             >
               Open the invitation
               <Icon name="arrow" className="h-[17px] w-[17px]" />
             </a>
             <a
               href="#wishlist"
-              className="inline-flex min-h-[3.2rem] items-center gap-2 px-1 text-[0.66rem] uppercase tracking-[0.19em] text-ink transition hover:text-plum max-[520px]:w-fit"
+              className="inline-flex min-h-[3.2rem] items-center gap-2 px-1 text-[0.78rem] uppercase tracking-[0.19em] text-ink transition hover:text-plum max-[520px]:w-fit"
             >
               Her wish list <span className="h-1 w-1 rounded-full bg-orchid" />
             </a>
@@ -222,10 +222,10 @@ export default function Hero({ ready }) {
                 key={label}
                 className={index === 2 ? "col-span-2 min-[521px]:col-span-1" : ""}
               >
-                <span className="mb-1.5 block text-[0.53rem] uppercase tracking-[0.22em] text-orchid-dark">
+                <span className="mb-1.5 block text-[0.7rem] uppercase tracking-[0.22em] text-orchid-dark">
                   {label}
                 </span>
-                <p className="font-serif text-[0.87rem] leading-[1.55] text-ink-soft">
+                <p className="font-serif text-[0.96rem] leading-[1.55] text-ink-soft">
                   {line1}
                   <br />
                   {line2}
@@ -234,13 +234,6 @@ export default function Hero({ ready }) {
             ))}
           </FadeUp>
 
-          <figure className="absolute -top-0.5 right-0 z-[3] h-[5.4rem] w-[4.1rem] rotate-[4deg] rounded-t-full rounded-b-[2px] border border-orchid/70 bg-paper p-1 shadow-[0_14px_28px_-12px_rgba(40,24,46,0.35)] min-[381px]:h-[6rem] min-[381px]:w-[4.6rem] min-[901px]:hidden">
-            <img
-              src={image("ijeoma-cameo.jpg")}
-              alt=""
-              className="h-full w-full rounded-t-full rounded-b-[1px] object-cover object-[50%_24%]"
-            />
-          </figure>
         </div>
 
         <FadeUp
@@ -261,22 +254,18 @@ export default function Hero({ ready }) {
                 className="aspect-[3/4.03] w-full object-cover object-[50%_22%] transition-transform duration-[1200ms] hover:scale-[1.025]"
               />
             </div>
-            <figcaption className="flex justify-between gap-4 px-2 pb-1 pt-3 text-[0.52rem] uppercase tracking-[0.18em] text-ink-soft">
-              <span>The birthday girl</span>
-              <span className="text-orchid-dark">Lagos · 2026</span>
+            <figcaption className="flex justify-end px-2 pb-1 pt-3 text-[0.68rem] uppercase tracking-[0.18em] text-orchid-dark">
+              Lagos · 2026
             </figcaption>
           </figure>
           <Seal />
-          <p className="vertical-caption absolute bottom-28 -left-[3.2rem] hidden whitespace-nowrap text-[0.5rem] uppercase tracking-[0.26em] text-orchid-dark min-[1181px]:block">
-            The violet hour edition
-          </p>
         </FadeUp>
       </div>
 
       <a
         href="#invitation"
         aria-label="Scroll to the invitation"
-        className="absolute bottom-7 left-1/2 z-[4] hidden -translate-x-1/2 flex-col items-center gap-2.5 text-[0.5rem] uppercase tracking-[0.24em] text-ink-soft min-[901px]:flex"
+        className="absolute bottom-7 left-1/2 z-[4] hidden -translate-x-1/2 flex-col items-center gap-2.5 text-[0.66rem] uppercase tracking-[0.24em] text-ink-soft min-[901px]:flex"
       >
         <span>Scroll to celebrate</span>
         <i className="scroll-cue-line" />

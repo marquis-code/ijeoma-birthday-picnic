@@ -33,7 +33,7 @@ function composeMessage(rsvp) {
     `${rsvp.attending === "yes" ? "Yes" : "Sadly, no"} — I've RSVP'd for Ijeoma's (Tweety's) birthday picnic.`,
     guestLine,
     "Saturday, 5 December 2026 · 1:30 PM · Jaekel House, Ebute Metta, Lagos.",
-    rsvp.note ? `A note for Tweety: “${rsvp.note}”` : "",
+    rsvp.note ? `A note for her: “${rsvp.note}”` : "",
     `Can't wait to celebrate ${firstName === "Ijeoma" ? "you" : "our girl"}! ✦`,
   ]
     .filter(Boolean)
@@ -163,7 +163,7 @@ export default function Rsvp() {
   const firstName = submitted?.name?.split(/\s+/)[0] || "";
 
   return (
-    <section id="rsvp" className="rsvp-surface relative overflow-hidden py-24 min-[761px]:py-32">
+    <section id="rsvp" className="rsvp-surface relative overflow-hidden py-16 min-[761px]:py-24">
       <span className="pointer-events-none absolute -left-8 top-4 -rotate-[7deg] select-none whitespace-nowrap font-script text-[clamp(12rem,29vw,30rem)] leading-[0.8] text-plum/[0.045]">
         say yes
       </span>
@@ -171,49 +171,20 @@ export default function Rsvp() {
       <div className="container-page relative grid items-center gap-14 min-[1024px]:grid-cols-[0.9fr_1.1fr] min-[1024px]:gap-24">
         <div className="max-w-[680px]">
           <Reveal>
-            <p className="mb-5 flex items-center gap-3 text-[0.62rem] uppercase tracking-[0.24em] text-ink-soft">
+            <p className="mb-5 flex items-center gap-3 text-[0.76rem] uppercase tracking-[0.24em] text-ink-soft">
               <span className="h-px w-8 bg-orchid" />
-              <span className="text-orchid-dark">No. 05</span> RSVP
+              <span className="text-orchid-dark">Be our guest</span>
             </p>
-            <h2 className="font-serif text-[clamp(2.9rem,10.5vw,6.3rem)] leading-[0.98] tracking-[-0.035em] text-ink min-[761px]:text-[clamp(2.9rem,6.4vw,6.3rem)]">
+            <h2 className="font-serif text-[clamp(2.9rem,10.5vw,6.3rem)] leading-[0.98] tracking-[-0.025em] text-ink min-[761px]:text-[clamp(2.9rem,6.4vw,6.3rem)]">
               Will you
               <br />
               <em className="italic text-plum">join us?</em>
             </h2>
-            <p className="mt-2 font-script text-[clamp(1.55rem,2.5vw,2.3rem)] leading-tight text-plum">
-              it wouldn’t be the same without you.
-            </p>
           </Reveal>
 
-          <Reveal as="p" delay={100} className="mt-7 max-w-[450px] text-[0.95rem] leading-[1.85] text-ink-soft">
-            The only thing missing is you. Let us know you’re coming, leave a little
-            note for the birthday girl, and don’t forget something delicious to
-            share.
-          </Reveal>
-
-          <Reveal delay={150} className="mt-8 flex flex-wrap gap-8 border-t border-ink/10 pt-5">
-            <div>
-              <span className="mb-1 block text-[0.53rem] uppercase tracking-[0.22em] text-orchid-dark">
-                Saturday
-              </span>
-              <p className="font-serif text-[0.95rem]">5 December 2026</p>
-            </div>
-            <div>
-              <span className="mb-1 block text-[0.53rem] uppercase tracking-[0.22em] text-orchid-dark">
-                1:30 PM
-              </span>
-              <p className="font-serif text-[0.95rem]">Jaekel House, Ebute Metta</p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={200}>
-            <button
-              type="button"
-              onClick={downloadCalendar}
-              className="mt-9 inline-flex w-fit items-center gap-2 border-b border-orchid/55 pb-1.5 text-[0.66rem] uppercase tracking-[0.18em] transition hover:border-plum hover:text-plum"
-            >
-              Save the date <Icon name="calendar" className="h-4 w-4" />
-            </button>
+          <Reveal as="p" delay={100} className="mt-6 max-w-[430px] text-[1rem] leading-[1.7] text-ink-soft">
+            The only thing missing is you. Let us know you’re coming — and leave a
+            little note for her.
           </Reveal>
         </div>
 
@@ -222,15 +193,15 @@ export default function Rsvp() {
 
           {!submitted ? (
             <form onSubmit={handleSubmit} noValidate className="relative">
-              <p className="mb-8 text-[0.6rem] uppercase tracking-[0.24em] text-orchid-dark">
-                A little note from you
+              <p className="mb-8 text-[0.74rem] uppercase tracking-[0.24em] text-orchid-dark">
+                Your reply
               </p>
 
               <div className="grid gap-5 min-[521px]:grid-cols-2">
                 <div>
                   <label
                     htmlFor="rsvp-name"
-                    className="mb-1.5 flex items-baseline gap-1.5 text-[0.58rem] uppercase tracking-[0.16em] text-ink-soft"
+                    className="mb-1.5 flex items-baseline gap-1.5 text-[0.72rem] uppercase tracking-[0.16em] text-ink-soft"
                   >
                     Your name <em className="not-italic text-plum">*</em>
                   </label>
@@ -249,16 +220,16 @@ export default function Rsvp() {
                     className={`field-input ${error ? "border-[#7c2d5a]" : ""}`}
                     required
                   />
-                  <span id="rsvp-name-error" className="mt-1 block min-h-4 text-[0.66rem] text-[#7c2d5a]">
+                  <span id="rsvp-name-error" className="mt-1 block min-h-4 text-[0.78rem] text-[#7c2d5a]">
                     {error}
                   </span>
                 </div>
                 <div>
                   <label
                     htmlFor="rsvp-contact"
-                    className="mb-1.5 flex items-baseline gap-1.5 text-[0.58rem] uppercase tracking-[0.16em] text-ink-soft"
+                    className="mb-1.5 flex items-baseline gap-1.5 text-[0.72rem] uppercase tracking-[0.16em] text-ink-soft"
                   >
-                    Email or phone <span className="text-[0.5rem] normal-case tracking-normal text-ink-soft/60">(optional)</span>
+                    Email or phone <span className="text-[0.66rem] normal-case tracking-normal text-ink-soft/80">(optional)</span>
                   </label>
                   <input
                     id="rsvp-contact"
@@ -276,7 +247,7 @@ export default function Rsvp() {
               </div>
 
               <fieldset className="mt-2">
-                <legend className="mb-1.5 flex items-baseline gap-1.5 text-[0.58rem] uppercase tracking-[0.16em] text-ink-soft">
+                <legend className="mb-1.5 flex items-baseline gap-1.5 text-[0.72rem] uppercase tracking-[0.16em] text-ink-soft">
                   Will you be there? <em className="not-italic text-plum">*</em>
                 </legend>
                 <div className="grid gap-2.5 min-[521px]:grid-cols-2">
@@ -297,7 +268,7 @@ export default function Rsvp() {
                         <strong className="font-serif text-[1rem] font-normal tracking-[-0.01em]">
                           {title}
                         </strong>
-                        <small className="text-[0.7rem] leading-[1.4] text-ink-soft">
+                        <small className="text-[0.8rem] leading-[1.4] text-ink-soft">
                           {copy}
                         </small>
                       </span>
@@ -310,9 +281,9 @@ export default function Rsvp() {
                 <div className="relative">
                   <label
                     htmlFor="rsvp-guests"
-                    className="mb-1.5 flex items-baseline gap-1.5 text-[0.58rem] uppercase tracking-[0.16em] text-ink-soft"
+                    className="mb-1.5 flex items-baseline gap-1.5 text-[0.72rem] uppercase tracking-[0.16em] text-ink-soft"
                   >
-                    Guests <span className="text-[0.5rem] normal-case tracking-normal text-ink-soft/60">(including you)</span>
+                    Guests <span className="text-[0.66rem] normal-case tracking-normal text-ink-soft/80">(including you)</span>
                   </label>
                   <select
                     id="rsvp-guests"
@@ -334,9 +305,9 @@ export default function Rsvp() {
                 <div>
                   <label
                     htmlFor="rsvp-note"
-                    className="mb-1.5 flex items-baseline gap-1.5 text-[0.58rem] uppercase tracking-[0.16em] text-ink-soft"
+                    className="mb-1.5 flex items-baseline gap-1.5 text-[0.72rem] uppercase tracking-[0.16em] text-ink-soft"
                   >
-                    A note for Tweety <span className="text-[0.5rem] normal-case tracking-normal text-ink-soft/60">(optional)</span>
+                    A note for her <span className="text-[0.66rem] normal-case tracking-normal text-ink-soft/80">(optional)</span>
                   </label>
                   <input
                     id="rsvp-note"
@@ -353,11 +324,11 @@ export default function Rsvp() {
 
               <button
                 type="submit"
-                className="mt-7 inline-flex min-h-[3.2rem] w-full items-center justify-center gap-3 rounded-full border border-ink bg-ink px-6 py-[0.95rem] text-[0.66rem] uppercase tracking-[0.19em] text-cream transition hover:border-plum hover:bg-plum"
+                className="mt-7 inline-flex min-h-[3.2rem] w-full items-center justify-center gap-3 rounded-full border border-ink bg-ink px-6 py-[0.95rem] text-[0.78rem] uppercase tracking-[0.19em] text-cream transition hover:border-plum hover:bg-plum"
               >
                 Send my RSVP <Icon name="arrow" className="h-[17px] w-[17px]" />
               </button>
-              <p className="mt-4 text-center text-[0.6rem] leading-[1.7] tracking-[0.06em] text-ink-soft">
+              <p className="mt-4 text-center text-[0.74rem] leading-[1.7] tracking-[0.06em] text-ink-soft">
                 With love, Ijeoma’s people. <span className="px-1 text-orchid">✦</span>{" "}
                 Kindly reply before the big day.
               </p>
@@ -379,7 +350,7 @@ export default function Rsvp() {
                   ? `We can’t wait to see you, ${firstName}.`
                   : `You’ll be missed, ${firstName}.`}
               </h3>
-              <p className="mx-auto max-w-[390px] text-[0.9rem] leading-[1.75] text-ink-soft">
+              <p className="mx-auto max-w-[390px] text-[1rem] leading-[1.75] text-ink-soft">
                 {attending
                   ? "Thank you for replying. Bring your best cutesy-comfortable outfit, something delicious to share, and a little room for cake."
                   : "Your love will be in the room even if you can’t be. Thank you for letting us know — and for being part of her story."}
@@ -388,14 +359,14 @@ export default function Rsvp() {
                 <button
                   type="button"
                   onClick={downloadCalendar}
-                  className="inline-flex min-h-[3.2rem] items-center justify-center gap-3 rounded-full border border-ink bg-ink px-6 py-[0.95rem] text-[0.66rem] uppercase tracking-[0.19em] text-cream transition hover:border-plum hover:bg-plum"
+                  className="inline-flex min-h-[3.2rem] items-center justify-center gap-3 rounded-full border border-ink bg-ink px-6 py-[0.95rem] text-[0.78rem] uppercase tracking-[0.19em] text-cream transition hover:border-plum hover:bg-plum"
                 >
                   Add to calendar <Icon name="calendar" className="h-4 w-4" />
                 </button>
                 <button
                   type="button"
                   onClick={shareReply}
-                  className="inline-flex min-h-[3.2rem] items-center justify-center gap-3 rounded-full border border-ink/30 px-6 py-[0.95rem] text-[0.66rem] uppercase tracking-[0.19em] transition hover:border-ink hover:bg-ink hover:text-cream"
+                  className="inline-flex min-h-[3.2rem] items-center justify-center gap-3 rounded-full border border-ink/30 px-6 py-[0.95rem] text-[0.78rem] uppercase tracking-[0.19em] transition hover:border-ink hover:bg-ink hover:text-cream"
                 >
                   {copied ? "Copied to clipboard" : "Share my reply"}
                   <Icon name="arrow" className="h-4 w-4" />
@@ -404,7 +375,7 @@ export default function Rsvp() {
               <button
                 type="button"
                 onClick={editReply}
-                className="mx-auto mt-4 border-b border-orchid/55 pb-1.5 text-[0.6rem] uppercase tracking-[0.18em] text-ink-soft transition hover:border-plum hover:text-plum"
+                className="mx-auto mt-4 border-b border-orchid/55 pb-1.5 text-[0.74rem] uppercase tracking-[0.18em] text-ink-soft transition hover:border-plum hover:text-plum"
               >
                 Edit my reply
               </button>

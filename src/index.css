@@ -1,30 +1,37 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "Bodoni Moda";
-  src: url("./assets/fonts/bodoni-moda.woff2") format("woff2");
-  font-weight: 400 700;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Bodoni Moda";
-  src: url("./assets/fonts/bodoni-moda-italic.woff2") format("woff2");
-  font-weight: 400 700;
-  font-style: italic;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Jost";
-  src: url("./assets/fonts/jost.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Pinyon Script";
-  src: url("./assets/fonts/pinyon-script.woff2") format("woff2");
+  font-family: "Satoshi";
+  src: url("./assets/fonts/Satoshi-Regular.ttf") format("truetype");
   font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Satoshi";
+  src: url("./assets/fonts/Satoshi-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Clash Display";
+  src: url("./assets/fonts/ClashDisplay-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Clash Display";
+  src: url("./assets/fonts/ClashDisplay-Semibold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Clash Display";
+  src: url("./assets/fonts/ClashDisplay-Bold.ttf") format("truetype");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -34,7 +41,7 @@
   --color-cream-deep: #eee2f1;
   --color-paper: #fdf9fe;
   --color-ink: #28182e;
-  --color-ink-soft: #5f4b65;
+  --color-ink-soft: #51405a;
   --color-plum: #3e1b4b;
   --color-plum-deep: #281031;
   --color-plum-soft: #62336f;
@@ -45,9 +52,9 @@
   --color-lilac: #cba3de;
   --color-lilac-pale: #e8d6f0;
   --color-mauve: #c79bc8;
-  --font-sans: "Jost", "Helvetica Neue", Arial, sans-serif;
-  --font-serif: "Bodoni Moda", Didot, Georgia, serif;
-  --font-script: "Pinyon Script", "Snell Roundhand", cursive;
+  --font-sans: "Satoshi", "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Clash Display", "Helvetica Neue", Arial, sans-serif;
+  --font-script: "Clash Display", "Helvetica Neue", Arial, sans-serif;
   --shadow-paper: 0 45px 90px -38px rgba(40, 24, 46, 0.4);
   --shadow-portrait: 0 30px 75px -25px rgba(40, 24, 46, 0.4);
   --shadow-postcard: 0 40px 80px -30px rgba(0, 0, 0, 0.65);
@@ -65,9 +72,9 @@
     background: var(--color-cream);
     color: var(--color-ink);
     font-family: var(--font-sans);
-    font-weight: 300;
+    font-weight: 400;
     font-size: 16px;
-    line-height: 1.6;
+    line-height: 1.65;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
   }
@@ -93,9 +100,29 @@
     height: auto;
   }
 
+  em,
+  i,
+  blockquote,
+  .italic,
+  .italic em {
+    font-style: normal !important;
+  }
+
   ::selection {
     background: var(--color-lilac);
     color: var(--color-plum-deep);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 600;
+  }
+
+  button,
+  label,
+  legend {
+    font-weight: 500;
   }
 
   :focus-visible {
@@ -108,6 +135,10 @@
   .container-page {
     width: min(calc(100% - 4rem), 1320px);
     margin-inline: auto;
+  }
+
+  .uppercase {
+    font-weight: 500;
   }
 
   @media (max-width: 760px) {

@@ -69,6 +69,9 @@ const paths = {
       <path d="M9 8.7h14M16 4.5v10.5" />
     </>
   ),
+  download: (
+    <path d="M16 4v18M8.5 14.5 16 22l7.5-7.5M4 27h24" />
+  ),
   money: (
     <>
       <rect x="3" y="8" width="26" height="16" rx="2" />

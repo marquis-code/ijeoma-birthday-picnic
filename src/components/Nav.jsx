@@ -93,8 +93,8 @@ export default function Nav() {
               Ijeoma
             </strong>
             <small
-              className={`text-[0.5rem] tracking-[0.22em] ${
-                open ? "text-cream/70" : "text-ink-soft"
+              className={`text-[0.66rem] tracking-[0.22em] ${
+                open ? "text-cream/92" : "text-ink-soft"
               }`}
             >
               05 · 12 · 26
@@ -110,7 +110,7 @@ export default function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="group relative py-1 text-[0.6rem] uppercase tracking-[0.18em] text-ink-soft transition hover:text-plum"
+              className="group relative py-1 text-[0.74rem] uppercase tracking-[0.18em] text-ink-soft transition hover:text-plum"
             >
               {link.label}
               <span className="absolute inset-x-0 bottom-0 h-px origin-right scale-x-0 bg-orchid-dark transition-transform duration-500 group-hover:origin-left group-hover:scale-x-100" />
@@ -120,7 +120,7 @@ export default function Nav() {
 
         <a
           href="#rsvp"
-          className={`hidden items-center gap-2 rounded-full border px-4 py-[0.65rem] text-[0.6rem] uppercase tracking-[0.2em] transition md:inline-flex ${
+          className={`hidden items-center gap-2 rounded-full border px-4 py-[0.65rem] text-[0.74rem] uppercase tracking-[0.2em] transition md:inline-flex ${
             open
               ? "pointer-events-none opacity-0"
               : "border-ink/30 hover:border-plum hover:bg-plum hover:text-cream"
@@ -164,14 +164,8 @@ export default function Nav() {
       >
         <span className="pointer-events-none absolute -bottom-[20vw] -right-[30vw] h-[70vw] w-[70vw] rounded-full border border-lilac/10" />
         <div className="relative z-10 w-full max-w-[520px]">
-          <p className="mb-2 text-[0.56rem] uppercase tracking-[0.26em] text-lilac">
-            Ijeoma’s Birthday Picnic
-          </p>
-          <p className="mb-10 font-serif text-[clamp(3rem,11vw,4.6rem)] leading-[0.95]">
+          <p className="mb-10 font-serif text-[clamp(3.2rem,12vw,5rem)] font-semibold leading-[0.9] tracking-[-0.04em]">
             Ijeoma
-            <em className="mt-2 block font-script text-[clamp(2rem,7vw,3rem)] not-italic text-lilac-pale">
-              aka Tweety
-            </em>
           </p>
           <nav aria-label="Mobile" className="flex flex-col border-t border-lilac-pale/20">
             {[...links, { href: "#rsvp", label: "RSVP" }].map((link, index) => (
@@ -180,18 +174,17 @@ export default function Nav() {
                 ref={index === 0 ? firstLinkRef : undefined}
                 href={link.href}
                 onClick={(event) => closeAndGo(event, link.href)}
-                className="flex items-baseline gap-5 border-b border-lilac-pale/20 py-4 font-serif text-[clamp(1.4rem,5vw,1.9rem)] transition hover:pl-1.5 hover:text-lilac-pale"
+                className="flex items-baseline gap-5 border-b border-lilac-pale/20 py-4 font-serif text-[clamp(1.5rem,5vw,2rem)] font-medium transition hover:pl-1.5 hover:text-lilac-pale"
               >
-                <span className="text-[0.52rem] tracking-[0.2em] text-lilac">
+                <span className="text-[0.68rem] tracking-[0.2em] text-lilac">
                   {String(index + 1).padStart(2, "0")}
                 </span>
                 {link.label}
               </a>
             ))}
           </nav>
-          <div className="mt-8 text-[0.62rem] uppercase leading-8 tracking-[0.12em] text-cream/60">
-            <p>Saturday, 5 December 2026 · 1:30 PM</p>
-            <p>Jaekel House, Ebute Metta, Lagos</p>
+          <div className="mt-8 text-[0.82rem] font-medium uppercase leading-8 tracking-[0.12em] text-cream/92">
+            <p>5 December 2026 · Lagos</p>
           </div>
         </div>
       </div>

@@ -1,23 +1,49 @@
 # Ijeoma’s Birthday Picnic
 
-A one-page birthday invitation for **Ijeoma (Tweety)** — Saturday, 5 December 2026 at Jaekel House, Ebute Metta, Lagos.
+A shorter, bolder one-page birthday invitation for **Ijeoma (Tweety)** — Saturday, 5 December 2026 at **Jaekel House, Nigerian Railway Corporation Compound, Ebute Metta, Lagos**.
 
 **Live site:** https://marquis-code.github.io/ijeoma-birthday-picnic/
 
-Built with **React 19**, **Vite 8** and **Tailwind CSS 4**. No UI component library, no external requests at runtime, and no build secrets.
-
 ![Ijeoma’s Birthday Picnic](preview/desktop-hero.jpg)
 
-## What’s inside
+![The downloadable wish-list PDF](preview/wishlist-pdf.jpg)
 
-- Violet editorial hero with a custom arch portrait, rotating seal and staggered name reveal
-- Live countdown to 1:30 PM WAT on 5 December 2026
-- Stationery-style invitation with venue, “cutesy & comfortable” dress code and “bring something edible to share”
-- Portrait story, hand-drawn Jaekel House postcard and picnic notes
-- All **15 wish-list items** as an interactive local checklist
-- RSVP form with validation, personalised confirmation, shareable reply and `.ics` calendar download
-- Original Web Audio garden soundtrack (the floating sound button)
-- Confetti, lilac dust, scroll reveals, a bird easter egg and reduced-motion support
+## Stack
+
+- **React 19**
+- **Vite 8**
+- **Tailwind CSS 4**
+- **Satoshi** for body and UI text, **Clash Display** for headings — the fonts used in `cfml-mobile`
+- `html2canvas` + `jsPDF` for the downloadable wish-list PDF
+- Satoshi and Clash Display are the fonts used in `cfml-mobile` (Fontshare)
+- GitHub Actions → GitHub Pages
+
+## The experience
+
+- **Opening gate:** the site opens on a full-screen “Ijeoma” screen. One tap starts **Toast by Koffee** and reveals the celebration. Browsers block unmuted autoplay, so this gate is the reliable way to start the song as the site opens.
+- **Hero:** Clash Display name treatment, portrait, the date, time and place.
+- **Invitation:** compact card with dress code, what to bring and a live countdown.
+- **Her story:** three portrait cards in a short gallery.
+- **Wishlist:** 15 items in a compact two-column list, tap-to-save checkmarks and a **Download wishlist PDF** button.
+- **Venue:** full official address and a direct Google Maps link.
+- **RSVP:** short form, confirmation, native share and `.ics` calendar download.
+- **Extras:** floating music control, confetti, soft dust, scroll reveals, reduced-motion support.
+
+The main page is intentionally much shorter than the previous version: roughly **6,000px on desktop** and **7,700px on mobile**, with repeated copy removed.
+
+## Music note
+
+The opening song is the official **Koffee — Toast** YouTube embed (`G1ykz9Rv3iw`), loaded through the YouTube IFrame API. No copyrighted audio file is bundled in the repository.
+
+Modern browsers refuse to start unmuted audio without a user gesture. The **opening gate** is therefore the one click required to start the song. If YouTube is unavailable or blocked, the gate falls back to “Open the invitation” and the site still works without sound.
+
+## Wishlist PDF
+
+The purple **Download wishlist PDF** button creates a designed A4 PDF in the browser. It includes all 15 items, the date, venue and a closing note, and downloads as:
+
+`Ijeoma-Birthday-Picnic-Wishlist.pdf`
+
+The web version’s checkmarks are a personal, device-local checklist (`localStorage`), not a shared registry. The PDF is the version to send to friends or family.
 
 ## Run locally
 
@@ -26,7 +52,7 @@ npm install
 npm run dev
 ```
 
-Open the local URL printed by Vite. To check the production build:
+Production preview:
 
 ```bash
 npm run build
@@ -37,27 +63,38 @@ npm run preview
 
 ```text
 src/
-  App.jsx                 Page composition
-  components/             Hero, Invitation, Countdown, Story, Wishlist,
-                          Venue, Postcard, Rsvp, Footer, Nav and effects
-  data/wishes.js          The 15 wish-list entries
-  lib/                    Calendar, confetti, storage and asset helpers
-  index.css               Tailwind import, @theme tokens, font faces,
-                          custom keyframes and a few art-direction classes
-public/
-  assets/images/          The supplied photographs
-  favicon.svg
-  robots.txt
+  App.jsx                  Page composition
+  context/MusicContext.jsx Toast / YouTube player context
+  components/
+    OpeningGate.jsx        One-tap music entry
+    Hero.jsx
+    Invitation.jsx         Compact invitation + inline countdown
+    Story.jsx              Short photo gallery
+    Wishlist.jsx           Compact list + PDF export
+    WishlistPdf.jsx        Hidden A4 design captured to PDF
+    Venue.jsx              Full address and directions
+    Rsvp.jsx
+    Footer.jsx
+    Nav.jsx
+    SoundButton.jsx
+    Effects.jsx
+    Icon.jsx
+  data/wishes.js           The 15 wish-list entries
+  lib/                     Calendar, confetti, storage and asset helpers
+  index.css                Tailwind import, fonts, @theme tokens and custom art
+public/assets/images/      The supplied photographs
 .github/workflows/deploy.yml
 ```
 
 ## Personalise it
 
 - **Copy and layout:** edit the relevant component in `src/components`.
-- **Wish list:** edit `src/data/wishes.js`. The count updates automatically.
-- **Colours and fonts:** the design tokens live in the `@theme` block at the top of `src/index.css`.
+- **Wish list:** edit `src/data/wishes.js`; the web count and PDF update automatically.
+- **Colours:** edit the `@theme` tokens at the top of `src/index.css`.
+- **Fonts:** Satoshi and Clash Display are self-hosted in `src/assets/fonts/`.
 - **Photos:** replace the files in `public/assets/images/` while keeping the filenames.
-- **RSVP delivery:** by default replies are saved in the guest’s browser and can be shared via the confirmation screen. To deliver them automatically, add a form endpoint (Formspree, Basin, etc.) or a WhatsApp number before the Vite entry script in `index.html`:
+- **Full address:** `src/components/Venue.jsx`, `src/lib/calendar.js` and `src/components/WishlistPdf.jsx`.
+- **RSVP delivery:** replies are saved locally by default. To deliver them automatically, add a form endpoint or WhatsApp number before the Vite entry script in `index.html`:
 
 ```html
 <script>
@@ -68,22 +105,16 @@ public/
 </script>
 ```
 
-With `whatsappNumber` set, “Share my reply” opens a pre-filled WhatsApp chat. With `rsvpEndpoint` set, the form POSTs JSON to that endpoint.
-
-The wish-list ticks are deliberately a personal, device-local checklist (`localStorage`), not a shared registry.
+With `whatsappNumber` set, “Share my reply” opens a pre-filled WhatsApp chat. With `rsvpEndpoint` set, the form POSTs JSON to the endpoint.
 
 ## Deploying
 
-This repository is deployed automatically to GitHub Pages by `.github/workflows/deploy.yml`.
-
-1. Push to `main`.
-2. The workflow builds with `npm ci && npm run build`.
-3. GitHub Pages serves `dist/` at the live URL above.
+Pushing to `main` triggers `.github/workflows/deploy.yml`, which runs `npm ci`, builds the site and deploys `dist/` to GitHub Pages.
 
 The Vite `base` is `./`, so the same build works at a repository subpath or a custom domain.
 
-## Calendar & privacy notes
+## Notes
 
-- The calendar event starts at 1:30 PM Lagos time (12:30 UTC) and uses a four-hour placeholder end time. Edit `src/lib/calendar.js` if the picnic ends at a different time.
-- The RSVP endpoint and WhatsApp number are intentionally blank in the repo. Nothing is sent anywhere until you configure one.
-- Fonts are self-hosted (Bodoni Moda, Pinyon Script, Jost, SIL Open Font License via Google Fonts).
+- Calendar events start at 1:30 PM Lagos time (12:30 UTC) and use a four-hour placeholder end time. Adjust in `src/lib/calendar.js`.
+- The RSVP endpoint and WhatsApp number are blank in the repo. Nothing is sent anywhere until configured.
+- The YouTube player is hidden for a clean visual experience; the floating sound button controls playback once the player is ready.
