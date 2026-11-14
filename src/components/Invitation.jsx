@@ -38,7 +38,7 @@ export default function Invitation() {
       <div className="container-page relative">
         <Reveal className="mx-auto mb-10 max-w-[850px] text-center">
           <p className="mb-4 text-[0.8rem] font-medium uppercase tracking-[0.24em] text-orchid-dark">
-            A garden invitation
+            A picnic invitation
           </p>
           <h2 className="font-serif text-[clamp(2.4rem,8vw,5.6rem)] font-semibold leading-[0.98] tracking-[-0.025em] text-ink">
             Come for the cake.

@@ -120,7 +120,7 @@ export default function Hero({ ready }) {
       <Botanical />
       <div className="pointer-events-none absolute inset-[1.1rem] z-[6] hidden border border-orchid/25 min-[761px]:block" />
 
-      <div className="container-page relative z-[2] grid grid-cols-1 items-center gap-16 min-[901px]:grid-cols-[1.08fr_0.92fr] min-[901px]:gap-[clamp(2rem,5vw,5rem)]">
+      <div className="container-page relative z-[2] grid grid-cols-1 items-center gap-10 min-[901px]:grid-cols-[1.08fr_0.92fr] min-[901px]:gap-[clamp(2rem,5vw,5rem)]">
         <div className="relative z-[3] max-w-[650px]">
           <FadeUp
             as="p"
@@ -208,31 +208,6 @@ export default function Hero({ ready }) {
             </a>
           </FadeUp>
 
-          <FadeUp
-            ready={ready}
-            delay={780}
-            className="mt-[clamp(2.3rem,4.5vh,3.4rem)] grid max-w-[540px] grid-cols-2 gap-4 border-t border-ink/15 pt-5 max-[380px]:grid-cols-1 min-[521px]:grid-cols-3"
-          >
-            {[
-              ["The day", "Saturday", "5 December 2026"],
-              ["The hour", "1:30 PM", "arrival"],
-              ["The place", "Jaekel House", "Ebute Metta, Lagos"],
-            ].map(([label, line1, line2], index) => (
-              <div
-                key={label}
-                className={index === 2 ? "col-span-2 max-[380px]:col-span-1 min-[521px]:col-span-1" : ""}
-              >
-                <span className="mb-1.5 block text-[0.7rem] uppercase tracking-[0.22em] text-orchid-dark">
-                  {label}
-                </span>
-                <p className="font-serif text-[0.96rem] leading-[1.55] text-ink-soft">
-                  {line1}
-                  <br />
-                  {line2}
-                </p>
-              </div>
-            ))}
-          </FadeUp>
 
         </div>
 
