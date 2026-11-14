@@ -63,6 +63,19 @@ export default function Venue() {
           >
             Get directions <Icon name="arrow" className="h-4 w-4" />
           </a>
+          <div className="mt-4">
+            <p className="text-[0.7rem] font-medium uppercase tracking-[0.18em] text-lilac">
+              Call for directions
+            </p>
+            <div className="mt-1.5 flex flex-wrap gap-x-4 gap-y-1 text-[0.9rem] leading-[1.5] text-cream/90">
+              <a href="tel:+2347035628526" className="border-b border-lilac/35 pb-0.5 transition hover:border-cream hover:text-cream">
+                +234 703 562 8526
+              </a>
+              <a href="tel:+2347057188970" className="border-b border-lilac/35 pb-0.5 transition hover:border-cream hover:text-cream">
+                +234 705 718 8970
+              </a>
+            </div>
+          </div>
         </Reveal>
       </div>
     </section>

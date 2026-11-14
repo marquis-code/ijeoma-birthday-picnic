@@ -3,7 +3,7 @@ import Icon from "./Icon";
 import { useMusic } from "../context/MusicContext";
 
 export default function OpeningGate({ entered, onEnter }) {
-  const { ready, failed, start } = useMusic();
+  const { start } = useMusic();
   const [gone, setGone] = useState(false);
   const buttonRef = useRef(null);
 
@@ -14,17 +14,13 @@ export default function OpeningGate({ entered, onEnter }) {
   }, [entered]);
 
   useEffect(() => {
-    if (entered) return;
-    if (ready || failed) {
-      buttonRef.current?.focus({ preventScroll: true });
-    }
-  }, [ready, failed, entered]);
+    if (!entered) buttonRef.current?.focus({ preventScroll: true });
+  }, [entered]);
 
   if (gone) return null;
 
   function enter() {
-    if (!ready && !failed) return;
-    if (!failed) start();
+    start();
     onEnter();
   }
 
@@ -57,13 +53,12 @@ export default function OpeningGate({ entered, onEnter }) {
           ref={buttonRef}
           type="button"
           onClick={enter}
-          disabled={!ready && !failed}
-          className="group mt-9 inline-flex min-h-[3.5rem] items-center gap-3 rounded-full border border-lilac bg-lilac px-7 py-4 text-[0.84rem] font-medium uppercase tracking-[0.18em] text-plum-deep transition hover:bg-cream disabled:cursor-wait disabled:opacity-70"
+          className="group mt-9 inline-flex min-h-[3.5rem] items-center gap-3 rounded-full border border-lilac bg-lilac px-7 py-4 text-[0.84rem] font-medium uppercase tracking-[0.18em] text-plum-deep transition hover:bg-cream"
         >
           <span className="grid h-7 w-7 place-items-center rounded-full bg-plum-deep text-lilac">
             <Icon name="arrow" className="h-3.5 w-3.5" />
           </span>
-          {failed ? "Open the invitation" : ready ? "Tap to open with music" : "Tuning the music…"}
+          Tap to open with music
         </button>
 
         <p className="mt-5 flex flex-wrap items-center justify-center gap-2 text-[0.82rem] text-cream/78">
@@ -72,9 +67,7 @@ export default function OpeningGate({ entered, onEnter }) {
           <span className="h-px w-6 bg-lilac/50" />
         </p>
         <p className="mt-2 text-[0.78rem] text-cream/72">
-          {failed
-            ? "The music could not load — the celebration is still ready for you."
-            : "Best experienced with sound. One tap starts the song."}
+          Best experienced with sound. One tap starts the song.
         </p>
       </div>
     </div>

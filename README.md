@@ -2,9 +2,13 @@
 
 A shorter, bolder one-page birthday invitation for **Ijeoma (Tweety)** — Saturday, 5 December 2026 at **Jaekel House, Nigerian Railway Corporation Compound, Ebute Metta, Lagos**.
 
+Directions: **+234 703 562 8526** or **+234 705 718 8970**.
+
 **Live site:** https://marquis-code.github.io/ijeoma-birthday-picnic/
 
 ![Ijeoma’s Birthday Picnic](preview/desktop-hero.jpg)
+
+![One-tap opening gate](preview/opening-gate.jpg)
 
 ![The downloadable wish-list PDF](preview/wishlist-pdf.jpg)
 
@@ -25,7 +29,7 @@ A shorter, bolder one-page birthday invitation for **Ijeoma (Tweety)** — Satur
 - **Invitation:** compact card with dress code, what to bring and a live countdown.
 - **Her story:** three portrait cards in a short gallery.
 - **Wishlist:** 15 items in a compact two-column list, tap-to-save checkmarks and a **Download wishlist PDF** button.
-- **Venue:** full official address and a direct Google Maps link.
+- **Venue:** full official address, two directions phone numbers and a direct Google Maps link.
 - **RSVP:** short form, confirmation, native share and `.ics` calendar download.
 - **Extras:** floating music control, confetti, soft dust, scroll reveals, reduced-motion support.
 
@@ -33,9 +37,9 @@ The main page is intentionally much shorter than the previous version: roughly *
 
 ## Music note
 
-The opening song is the official **Koffee — Toast** YouTube embed (`G1ykz9Rv3iw`), loaded through the YouTube IFrame API. No copyrighted audio file is bundled in the repository.
+The opening song is the official **Koffee — Toast** YouTube embed (`p8HoEvDh70Y`), loaded as a direct autoplay iframe after the opening tap. No copyrighted audio file is bundled in the repository.
 
-Modern browsers refuse to start unmuted audio without a user gesture. The **opening gate** is therefore the one click required to start the song. If YouTube is unavailable or blocked, the gate falls back to “Open the invitation” and the site still works without sound.
+Modern browsers refuse to start unmuted audio without a user gesture. The **opening gate** is therefore the one click required to start the song. The floating sound button controls playback. If your network blocks YouTube, the site still works; the official video can also be opened directly at <https://www.youtube.com/watch?v=p8HoEvDh70Y>.
 
 ## Wishlist PDF
 
