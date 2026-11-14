@@ -72,7 +72,7 @@ export default function OpeningGate({ entered, onEnter }) {
           className="gate-rise mt-8 text-[0.82rem] font-medium tracking-[0.12em] text-lilac-pale"
           style={{ animationDelay: "0.5s" }}
         >
-          A little secret — there’s cake inside.
+          A little secret — there’s music inside.
         </p>
 
         <div
