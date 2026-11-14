@@ -10,7 +10,7 @@ import {
 
 const MusicContext = createContext(null);
 const TRACKS = ["p8HoEvDh70Y", "VIoPTujr11M", "uJri0mNq8IQ"];
-const TRACK_SECONDS = 45;
+const TRACK_SECONDS = 10;
 
 function embedFor(id) {
   return (
