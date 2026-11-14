@@ -33,7 +33,7 @@ Directions: **+234 703 562 8526** or **+234 705 718 8970**.
 - **Wishlist:** 15 items in a cute two-column mobile / three-column desktop card grid, tap-to-save hearts, a **Download wishlist PDF** button and a money-gift card.
 - **Venue:** full official address, two directions phone numbers and a direct Google Maps link.
 - **RSVP:** short form, confirmation, native share and `.ics` calendar download.
-- **Extras:** animated flower sprays, cakes, ribbons and floating petals across the sections, opening confetti, confetti on saved gifts, soft dust, scroll reveals and reduced-motion support.
+- **Extras:** continuous site-wide confetti rain, animated flower sprays, cakes, ribbons and floating petals across the sections, opening confetti, confetti on saved gifts, soft dust, scroll reveals and reduced-motion support.
 - **Music hint:** a floating music-note trigger with a downward arrow at the bottom right. It only starts or resumes the music — it never stops it.
 
 The main page is intentionally much shorter than the previous version: roughly **7,000px on desktop** and **9,100px on mobile**, with repeated copy removed.

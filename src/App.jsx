@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Effects from "./components/Effects";
+import CelebrationRain from "./components/CelebrationRain";
 import { AmbientCelebration } from "./components/Celebration";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
@@ -35,6 +36,7 @@ function Page() {
       <OpeningGate entered={entered} onEnter={() => setEntered(true)} />
       <ProgressBar />
       <Effects />
+      <CelebrationRain />
       <AmbientCelebration />
       <Nav />
       <MusicHint visible={entered} />

@@ -49,7 +49,7 @@ export default function OpeningGate({ entered, onEnter }) {
 
       <div className="relative z-10 mx-auto flex max-w-[760px] flex-col items-center text-center">
         <p
-          className="gate-rise mb-5 text-[0.84rem] font-medium tracking-[0.06em] text-lilac"
+          className="gate-rise mb-5 font-serif text-[clamp(1.15rem,2.3vw,1.75rem)] font-medium tracking-[-0.01em] text-lilac-pale"
           style={{ animationDelay: "0.08s" }}
         >
           A birthday picnic for
