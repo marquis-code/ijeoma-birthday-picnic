@@ -130,7 +130,7 @@ export default function Hero({ ready }) {
           >
             <span className="block h-px w-[2.2rem] bg-orchid" />
             <span className="whitespace-nowrap text-ink">Ijeoma’s Birthday Picnic</span>
-            <span className="text-[0.65rem] text-orchid">✦</span>
+            <span className="text-[0.65rem] text-orchid max-[380px]:hidden">✦</span>
           </FadeUp>
 
           <div className="relative">
@@ -211,7 +211,7 @@ export default function Hero({ ready }) {
           <FadeUp
             ready={ready}
             delay={780}
-            className="mt-[clamp(2.3rem,4.5vh,3.4rem)] grid max-w-[540px] grid-cols-2 gap-4 border-t border-ink/15 pt-5 min-[521px]:grid-cols-3"
+            className="mt-[clamp(2.3rem,4.5vh,3.4rem)] grid max-w-[540px] grid-cols-2 gap-4 border-t border-ink/15 pt-5 max-[380px]:grid-cols-1 min-[521px]:grid-cols-3"
           >
             {[
               ["The day", "Saturday", "5 December 2026"],
@@ -220,7 +220,7 @@ export default function Hero({ ready }) {
             ].map(([label, line1, line2], index) => (
               <div
                 key={label}
-                className={index === 2 ? "col-span-2 min-[521px]:col-span-1" : ""}
+                className={index === 2 ? "col-span-2 max-[380px]:col-span-1 min-[521px]:col-span-1" : ""}
               >
                 <span className="mb-1.5 block text-[0.7rem] uppercase tracking-[0.22em] text-orchid-dark">
                   {label}
