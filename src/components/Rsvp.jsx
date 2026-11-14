@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import Icon from "./Icon";
+import GuestSelect from "./GuestSelect";
 import Reveal from "./Reveal";
 import { CelebrationDecor } from "./Celebration";
 import { downloadCalendar } from "../lib/calendar";
@@ -287,21 +288,11 @@ export default function Rsvp() {
                   >
                     Guests <span className="text-[0.66rem] normal-case tracking-normal text-ink-soft/80">(including you)</span>
                   </label>
-                  <select
-                    id="rsvp-guests"
-                    name="guests"
+                  <GuestSelect
                     value={form.guests}
-                    onChange={update("guests")}
-                    className="field-input cursor-pointer pr-7"
-                  >
-                    <option value="1">Just me</option>
-                    <option value="2">2 of us</option>
-                    <option value="3">3 of us</option>
-                    <option value="4">4 of us</option>
-                  </select>
-                  <Icon
-                    name="arrow"
-                    className="pointer-events-none absolute bottom-2.5 right-0 h-3.5 w-3.5 rotate-90 text-orchid-dark"
+                    onChange={(guests) =>
+                      setForm((current) => ({ ...current, guests }))
+                    }
                   />
                 </div>
                 <div>
