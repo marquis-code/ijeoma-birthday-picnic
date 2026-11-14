@@ -50,7 +50,7 @@ After sending, guests are invited to WhatsApp their transfer proof to **+234 703
 
 ## Music note
 
-The background sequence begins when the opening gate is clicked and plays as a continuous three-track DJ-style set, cutting to the next track every 10 seconds and looping. No track titles are shown on the site.
+The single background track begins when the opening gate is clicked and loops continuously. No track titles are shown on the site.
 
 The opening soundtrack is embedded from YouTube and starts with the one-tap opening gate. No audio file is bundled in the repository.
 

@@ -54,7 +54,6 @@ export default function Footer() {
           <a href="#top" aria-label="Back to the top" className="transition hover:text-lilac-pale">
             Ijeoma <span>·</span> 2026
           </a>
-          <p className="text-center">With love, from all of us</p>
           <a href="#top" className="inline-flex items-center gap-2 transition hover:text-lilac-pale">
             Back to top <Icon name="arrowUp" className="h-3 w-3" />
           </a>

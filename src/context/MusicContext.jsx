@@ -9,44 +9,20 @@ import {
 } from "react";
 
 const MusicContext = createContext(null);
-const TRACKS = ["p8HoEvDh70Y", "VIoPTujr11M", "uJri0mNq8IQ"];
-const TRACK_SECONDS = 10;
+const TRACK_ID = "uJri0mNq8IQ";
 
-function embedFor(id) {
-  return (
-    `https://www.youtube.com/embed/${id}` +
-    "?autoplay=1&loop=1&controls=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1"
-  );
-}
+const EMBED_SRC =
+  `https://www.youtube.com/embed/${TRACK_ID}` +
+  "?autoplay=1&loop=1&controls=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1";
 
 export function MusicProvider({ children }) {
   const [started, setStarted] = useState(false);
-  const [trackIndex, setTrackIndex] = useState(0);
-  const [src, setSrc] = useState("");
   const iframeRef = useRef(null);
 
-  const start = useCallback(() => {
-    setTrackIndex(0);
-    setSrc(embedFor(TRACKS[0]));
-    setStarted(true);
-  }, []);
+  const start = useCallback(() => setStarted(true), []);
 
   useEffect(() => {
     if (!started) return undefined;
-
-    const timer = window.setInterval(() => {
-      setTrackIndex((current) => {
-        const next = (current + 1) % TRACKS.length;
-        setSrc(embedFor(TRACKS[next]));
-        return next;
-      });
-    }, TRACK_SECONDS * 1000);
-
-    return () => window.clearInterval(timer);
-  }, [started]);
-
-  useEffect(() => {
-    if (!started || !src) return undefined;
 
     const nudge = window.setTimeout(() => {
       try {
@@ -60,7 +36,7 @@ export function MusicProvider({ children }) {
     }, 1200);
 
     return () => window.clearTimeout(nudge);
-  }, [src, started]);
+  }, [started]);
 
   const resume = useCallback(() => {
     if (!started) {
@@ -96,10 +72,9 @@ export function MusicProvider({ children }) {
           className="pointer-events-none fixed left-[-9999px] top-0 h-[135px] w-[240px] overflow-hidden opacity-0"
         >
           <iframe
-            key={trackIndex}
             ref={iframeRef}
             title="Celebration"
-            src={src}
+            src={EMBED_SRC}
             width="240"
             height="135"
             allow="autoplay; encrypted-media; picture-in-picture"
