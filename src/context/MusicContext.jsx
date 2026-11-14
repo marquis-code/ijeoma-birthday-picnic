@@ -1,54 +1,68 @@
-import { createContext, useCallback, useContext, useMemo, useRef, useState } from "react";
+import {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 const MusicContext = createContext(null);
-const VIDEO_ID = "p8HoEvDh70Y";
-const NEXT_VIDEO_ID = "VIoPTujr11M"; // second track in the opening sequence
-const THIRD_VIDEO_ID = "uJri0mNq8IQ"; // third track in the opening sequence
+const TRACKS = ["p8HoEvDh70Y", "VIoPTujr11M", "uJri0mNq8IQ"];
+const TRACK_SECONDS = 45;
 
-const EMBED_SRC =
-  `https://www.youtube.com/embed/${VIDEO_ID}` +
-  `?autoplay=1&loop=1&playlist=${NEXT_VIDEO_ID},${THIRD_VIDEO_ID}` +
-  "&controls=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1";
+function embedFor(id) {
+  return (
+    `https://www.youtube.com/embed/${id}` +
+    "?autoplay=1&loop=1&controls=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1"
+  );
+}
 
 export function MusicProvider({ children }) {
   const [started, setStarted] = useState(false);
-  const [playing, setPlaying] = useState(false);
+  const [trackIndex, setTrackIndex] = useState(0);
+  const [src, setSrc] = useState("");
   const iframeRef = useRef(null);
 
-  const command = useCallback((func) => {
-    try {
-      iframeRef.current?.contentWindow?.postMessage(
-        JSON.stringify({ event: "command", func, args: [] }),
-        "*"
-      );
-    } catch {
-      // If the embed is blocked, the site still works without sound.
-    }
-  }, []);
-
   const start = useCallback(() => {
+    setTrackIndex(0);
+    setSrc(embedFor(TRACKS[0]));
     setStarted(true);
-    setPlaying(true);
   }, []);
 
-  const pause = useCallback(() => {
-    command("pauseVideo");
-    setPlaying(false);
-  }, [command]);
+  useEffect(() => {
+    if (!started) return undefined;
 
-  const toggle = useCallback(() => {
-    if (playing) {
-      pause();
-    } else {
-      command("playVideo");
-      setPlaying(true);
-    }
-  }, [command, pause, playing]);
+    const timer = window.setInterval(() => {
+      setTrackIndex((current) => {
+        const next = (current + 1) % TRACKS.length;
+        setSrc(embedFor(TRACKS[next]));
+        return next;
+      });
+    }, TRACK_SECONDS * 1000);
 
-  const value = useMemo(
-    () => ({ ready: true, failed: false, playing, start, pause, toggle }),
-    [playing, start, pause, toggle]
-  );
+    return () => window.clearInterval(timer);
+  }, [started]);
+
+  useEffect(() => {
+    if (!started || !src) return undefined;
+
+    const nudge = window.setTimeout(() => {
+      try {
+        iframeRef.current?.contentWindow?.postMessage(
+          JSON.stringify({ event: "command", func: "playVideo", args: [] }),
+          "*"
+        );
+      } catch {
+        // Autoplay may be refused by the browser; the page remains usable.
+      }
+    }, 1200);
+
+    return () => window.clearTimeout(nudge);
+  }, [src, started]);
+
+  const value = useMemo(() => ({ ready: true, failed: false, start }), [start]);
 
   return (
     <MusicContext.Provider value={value}>
@@ -59,9 +73,10 @@ export function MusicProvider({ children }) {
           className="pointer-events-none fixed left-[-9999px] top-0 h-[135px] w-[240px] overflow-hidden opacity-0"
         >
           <iframe
+            key={trackIndex}
             ref={iframeRef}
             title="Celebration"
-            src={EMBED_SRC}
+            src={src}
             width="240"
             height="135"
             allow="autoplay; encrypted-media; picture-in-picture"
