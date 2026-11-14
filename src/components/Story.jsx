@@ -5,17 +5,17 @@ const photos = [
   {
     src: "ijeoma-story.jpg",
     alt: "Ijeoma smiling in a champagne satin dress in a Lagos garden",
-    caption: "Soft light, always.",
+    caption: "The smile that starts the party.",
   },
   {
     src: "ijeoma-garden.jpg",
     alt: "Ijeoma standing in a tropical garden courtyard with string lights",
-    caption: "Champagne dreams.",
+    caption: "The table she makes feel like home.",
   },
   {
     src: "ijeoma-stairs.jpg",
     alt: "Ijeoma laughing in a patterned purple kimono and white trousers",
-    caption: "Exactly herself.",
+    caption: "That laugh — our favourite sound.",
   },
 ];
 
@@ -37,10 +37,24 @@ export default function Story() {
               <span className="text-plum">the glow.</span>
             </h2>
           </Reveal>
-          <Reveal as="p" delay={100} className="max-w-[560px] pb-1 text-[1rem] leading-[1.7] text-ink-soft">
-            Ijeoma is the friend who makes an ordinary afternoon feel like an
-            occasion. Here’s to the laugh, the heart and the light she brings
-            everywhere she goes.
+          <Reveal as="div" delay={100} className="max-w-[580px] pb-1">
+            <p className="text-[1rem] leading-[1.7] text-ink-soft">
+              Once upon a garden in Lagos, a girl called Ijeoma walked in and the
+              whole afternoon got warmer. She has a laugh that turns strangers into
+              friends, a heart that notices everyone’s favourite little things, and
+              the kind of presence that makes people feel utterly seen. She is the
+              one who says “come as you are” and means it — who dances first, gives the
+              best hugs, and makes even a quiet Tuesday feel like a reason to dress up.
+            </p>
+            <p className="mt-4 text-[1rem] leading-[1.7] text-ink-soft">
+              So this picnic is not just a birthday. It’s our little love letter to
+              the girl who makes life feel softer, brighter and a lot more fun.
+              Ijeoma, our favourite Tweety: this whole day is for you. Happy
+              birthday, beautiful. Go on and blush — we planned for it.
+            </p>
+            <p className="mt-5 font-serif text-[1.05rem] font-medium tracking-[-0.01em] text-plum">
+              With all our love, your people.
+            </p>
           </Reveal>
         </div>
 
@@ -58,9 +72,13 @@ export default function Story() {
                 loading="lazy"
                 className="aspect-[3/4] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
               />
-              <figcaption className="flex items-center justify-between gap-3 px-2 pb-1 pt-3 text-[0.82rem] font-medium text-ink-soft">
-                <span>{photo.caption}</span>
-                <span className="text-orchid-dark">0{index + 1}</span>
+              <figcaption className="flex items-start justify-between gap-3 px-2 pb-1 pt-3">
+                <span className="font-serif text-[0.98rem] font-medium leading-snug tracking-[-0.005em] text-ink">
+                  {photo.caption}
+                </span>
+                <span className="pt-0.5 text-[0.78rem] font-medium text-orchid-dark">
+                  0{index + 1}
+                </span>
               </figcaption>
             </Reveal>
           ))}
