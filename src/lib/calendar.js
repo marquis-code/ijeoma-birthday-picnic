@@ -23,7 +23,7 @@ export function downloadCalendar() {
     "DTEND:20261205T163000Z",
     "SUMMARY:Ijeoma's Birthday Picnic",
     "LOCATION:Jaekel House\\, Nigerian Railway Corporation Compound\\, Ebute Metta\\, Lagos\\, Nigeria",
-    "DESCRIPTION:Join us for Ijeoma's birthday picnic. Arrive by 1:30 PM. Dress cutesy and comfortably, and bring something edible to share. Jaekel House\\, Nigerian Railway Corporation Compound\\, Ebute Metta\\, Lagos. For directions call +234 703 562 8526 or +234 705 718 8970.",
+    "DESCRIPTION:Join us for Ijeoma's birthday picnic. Arrive by 1:30 PM. Dress cutesy and comfortably, and bring something edible to share. Jaekel House\\, Nigerian Railway Corporation Compound\\, Ebute Metta\\, Lagos. Entrance fee: NGN 3,000. For directions call +234 703 562 8526 or +234 705 718 8970.",
     `URL:${MAP_URL}`,
     "END:VEVENT",
     "END:VCALENDAR",

@@ -28,7 +28,7 @@ Directions: **+234 703 562 8526** or **+234 705 718 8970**.
 
 - **Opening gate:** the site opens on a full-screen “Ijeoma” screen. One tap releases a burst of confetti, reveals the celebration and starts its background soundtrack. Browsers block unmuted autoplay, so this gate is the reliable way to begin the audio as the site opens.
 - **Hero:** Clash Display name treatment and portrait, with animated bows and floral accents.
-- **Invitation:** two-panel card with the full address, time, dress code, what to bring and a live countdown.
+- **Invitation:** two-panel card with the full address, time, entrance fee, dress code, what to bring and a live countdown.
 - **Her story:** three portrait cards in a short gallery.
 - **Wishlist:** 15 items in a cute two-column mobile / three-column desktop card grid, tap-to-save hearts, a **Download wishlist PDF** button and a money-gift card.
 - **Venue:** full official address, two directions phone numbers and a direct Google Maps link.

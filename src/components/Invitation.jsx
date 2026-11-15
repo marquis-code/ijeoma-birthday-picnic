@@ -104,6 +104,14 @@ export default function Invitation() {
                       Nigerian Railway Corporation Compound, Ebute Metta, Lagos
                     </p>
                   </div>
+                  <div aria-label="Entrance Fee: NGN 3,000">
+                    <p className="text-[0.7rem] font-medium uppercase tracking-[0.2em] text-lilac">
+                      Entrance Fee
+                    </p>
+                    <p className="mt-1 font-serif text-[1.35rem] font-medium leading-[1.2] text-cream">
+                      NGN 3,000
+                    </p>
+                  </div>
                 </div>
 
                 <div className="mt-7 border-t border-lilac/20 pt-5">
