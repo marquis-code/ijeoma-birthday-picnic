@@ -1,4 +1,6 @@
 const VISITOR_KEY = "ijeoma-birthday-visitor-v1";
+const SESSION_KEY = "ijeoma-birthday-session-v1";
+let fallbackSessionId = "";
 import { apiUrl } from "./api";
 
 const ENDPOINT = apiUrl("/api/visit");
@@ -21,6 +23,19 @@ export function getVisitorId() {
   }
 }
 
+export function getSessionId() {
+  try {
+    const existing = window.sessionStorage.getItem(SESSION_KEY);
+    if (existing) return existing;
+    const next = makeId();
+    window.sessionStorage.setItem(SESSION_KEY, next);
+    return next;
+  } catch {
+    if (!fallbackSessionId) fallbackSessionId = makeId();
+    return fallbackSessionId;
+  }
+}
+
 export function trackVisit() {
   if (typeof window === "undefined" || trackedThisLoad) return;
   trackedThisLoad = true;
@@ -28,6 +43,7 @@ export function trackVisit() {
     const params = new URLSearchParams(window.location.search);
     const payload = {
       visitorId: getVisitorId(),
+      sessionId: getSessionId(),
       path: window.location.pathname,
       referrer: document.referrer || "",
       title: document.title,
