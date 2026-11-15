@@ -6,11 +6,12 @@ import { CelebrationDecor } from "./Celebration";
 import { downloadCalendar } from "../lib/calendar";
 import { celebrateAt } from "../lib/celebrate";
 import { readJSON, writeJSON } from "../lib/storage";
+import { getVisitorId } from "../lib/tracking";
 
 const STORAGE_KEY = "ijeoma-birthday-picnic-rsvp-v1";
 const CONFIG = {
-  rsvpEndpoint: "",
-  whatsappNumber: "",
+  rsvpEndpoint: "/api/rsvp",
+  whatsappNumber: "2347035628526",
   ...(typeof window !== "undefined" ? window.IJEOMA_CONFIG || {} : {}),
 };
 
@@ -92,6 +93,7 @@ export default function Rsvp() {
       ...form,
       name,
       note: form.note.trim(),
+      visitorId: getVisitorId(),
       submittedAt: new Date().toISOString(),
     };
     writeJSON(STORAGE_KEY, rsvp);
@@ -348,21 +350,21 @@ export default function Rsvp() {
                   ? "Thank you for replying. Bring your best cutesy-comfortable outfit, something delicious to share, and a little room for cake."
                   : "Your love will be in the room even if you can’t be. Thank you for letting us know — and for being part of her story."}
               </p>
-              <div className="mx-auto mt-7 flex max-w-[320px] flex-col gap-2.5">
-                <button
-                  type="button"
-                  onClick={downloadCalendar}
-                  className="inline-flex min-h-[3.2rem] items-center justify-center gap-3 rounded-full border border-ink bg-ink px-6 py-[0.95rem] text-[0.78rem] uppercase tracking-[0.19em] text-cream transition hover:border-plum hover:bg-plum"
-                >
-                  Add to calendar <Icon name="calendar" className="h-4 w-4" />
-                </button>
+              <div className="mx-auto mt-7 flex max-w-[340px] flex-col gap-2.5">
                 <button
                   type="button"
                   onClick={shareReply}
+                  className="inline-flex min-h-[3.2rem] items-center justify-center gap-3 rounded-full bg-[#128c7e] px-6 py-[0.95rem] text-[0.78rem] uppercase tracking-[0.19em] text-white transition hover:bg-[#0d6f63]"
+                >
+                  {copied ? "Copied to clipboard" : "Send RSVP on WhatsApp"}
+                  <Icon name="arrow" className="h-4 w-4" />
+                </button>
+                <button
+                  type="button"
+                  onClick={downloadCalendar}
                   className="inline-flex min-h-[3.2rem] items-center justify-center gap-3 rounded-full border border-ink/30 px-6 py-[0.95rem] text-[0.78rem] uppercase tracking-[0.19em] transition hover:border-ink hover:bg-ink hover:text-cream"
                 >
-                  {copied ? "Copied to clipboard" : "Share my reply"}
-                  <Icon name="arrow" className="h-4 w-4" />
+                  Add to calendar <Icon name="calendar" className="h-4 w-4" />
                 </button>
               </div>
               <button

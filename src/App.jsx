@@ -14,6 +14,7 @@ import Story from "./components/Story";
 import Venue from "./components/Venue";
 import Wishlist from "./components/Wishlist";
 import { MusicProvider } from "./context/MusicContext";
+import { trackVisit } from "./lib/tracking";
 
 function Page() {
   const [entered, setEntered] = useState(false);
@@ -24,6 +25,10 @@ function Page() {
       document.body.style.overflow = "";
     };
   }, [entered]);
+
+  useEffect(() => {
+    trackVisit();
+  }, []);
 
   return (
     <>

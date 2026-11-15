@@ -137,3 +137,28 @@ The Vite `base` is `./`, so the same build works at a repository subpath or a cu
 - Calendar events start at 1:30 PM Lagos time (12:30 UTC) and use a four-hour placeholder end time. Adjust in `src/lib/calendar.js`.
 - The RSVP endpoint and WhatsApp number are blank in the repo. Nothing is sent anywhere until configured.
 - The YouTube player is hidden for a clean visual experience.
+
+
+## RSVP tracking and admin
+
+The app now includes a small Node/Express server that serves the built site, accepts RSVPs, records anonymous page-open visits and exposes a private admin dashboard at `/admin`.
+
+### Run locally
+
+```bash
+npm ci
+npm run build
+ADMIN_PASSWORD="choose-a-private-password" DATA_DIR="./data" npm start
+```
+
+Open <http://localhost:3000/admin> and sign in with `ADMIN_PASSWORD`.
+
+### Deploying on Railway
+
+- The service must run `npm start`, not just serve `dist` as a static site.
+- Set `ADMIN_PASSWORD` and `ADMIN_SECRET` in Railway variables.
+- Set `DATA_DIR` to a mounted Railway volume (for example `/data`) so RSVPs and visit logs survive redeploys.
+- `WHATSAPP_NUMBER` defaults to `2347035628526`.
+- The admin page is at `/admin`.
+
+The frontend posts RSVPs to `/api/rsvp` and opens WhatsApp with the same composed message. Page-open tracking posts to `/api/visit`. If the site is hosted as a static-only site, those API calls are unavailable and the admin backend will not receive data.
