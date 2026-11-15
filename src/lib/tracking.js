@@ -1,5 +1,7 @@
 const VISITOR_KEY = "ijeoma-birthday-visitor-v1";
-const ENDPOINT = "/api/visit";
+import { apiUrl } from "./api";
+
+const ENDPOINT = apiUrl("/api/visit");
 let trackedThisLoad = false;
 
 function makeId() {

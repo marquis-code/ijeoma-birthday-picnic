@@ -7,10 +7,11 @@ import { downloadCalendar } from "../lib/calendar";
 import { celebrateAt } from "../lib/celebrate";
 import { readJSON, writeJSON } from "../lib/storage";
 import { getVisitorId } from "../lib/tracking";
+import { apiUrl } from "../lib/api";
 
 const STORAGE_KEY = "ijeoma-birthday-picnic-rsvp-v1";
 const CONFIG = {
-  rsvpEndpoint: "/api/rsvp",
+  rsvpEndpoint: apiUrl("/api/rsvp"),
   whatsappNumber: "2347035628526",
   ...(typeof window !== "undefined" ? window.IJEOMA_CONFIG || {} : {}),
 };
