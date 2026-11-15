@@ -5,7 +5,7 @@ import { celebrate } from "../lib/celebrate";
 import { CelebrationDecor } from "./Celebration";
 
 export default function OpeningGate({ entered, onEnter }) {
-  const { start } = useMusic();
+  const { resume } = useMusic();
   const [gone, setGone] = useState(false);
   const buttonRef = useRef(null);
 
@@ -20,7 +20,7 @@ export default function OpeningGate({ entered, onEnter }) {
   }, [entered]);
 
   function enter(event) {
-    start();
+    resume();
     celebrate(event.currentTarget, 72);
     onEnter();
   }

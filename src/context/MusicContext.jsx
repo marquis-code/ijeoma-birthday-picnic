@@ -9,14 +9,14 @@ import {
 } from "react";
 
 const MusicContext = createContext(null);
-const TRACK_ID = "Z3Zvr_oZ2Q8";
+const TRACK_ID = "DUVE6aADtPE";
 
 const EMBED_SRC =
   `https://www.youtube.com/embed/${TRACK_ID}` +
-  "?autoplay=1&loop=1&controls=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1";
+  `?autoplay=1&loop=1&playlist=${TRACK_ID}&controls=0&modestbranding=1&rel=0&playsinline=1&enablejsapi=1`;
 
 export function MusicProvider({ children }) {
-  const [started, setStarted] = useState(false);
+  const [started, setStarted] = useState(true);
   const iframeRef = useRef(null);
 
   const start = useCallback(() => setStarted(true), []);
@@ -50,6 +50,10 @@ export function MusicProvider({ children }) {
         "*"
       );
       playerWindow?.postMessage(
+        JSON.stringify({ event: "command", func: "unMute", args: [] }),
+        "*"
+      );
+      playerWindow?.postMessage(
         JSON.stringify({ event: "command", func: "playVideo", args: [] }),
         "*"
       );
@@ -57,6 +61,17 @@ export function MusicProvider({ children }) {
       // No-op: the icon is a helpful nudge, never a stop control.
     }
   }, [started, start]);
+
+  useEffect(() => {
+    if (!started) return undefined;
+    const onFirstGesture = () => resume();
+    document.addEventListener("pointerdown", onFirstGesture, { once: true });
+    document.addEventListener("keydown", onFirstGesture, { once: true });
+    return () => {
+      document.removeEventListener("pointerdown", onFirstGesture);
+      document.removeEventListener("keydown", onFirstGesture);
+    };
+  }, [started, resume]);
 
   const value = useMemo(
     () => ({ ready: true, failed: false, start, resume }),
